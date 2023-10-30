@@ -67,7 +67,7 @@ $(DV_PATTERNS): verify-% : ./verilog/dv/%
                 -e CARAVEL_ROOT=${CARAVEL_ROOT} \
                 -u $(id -u $$USER):$(id -g $$USER) efabless/dv_setup:latest \
                 sh -c $(VERIFY_COMMAND)
-				
+
 # Openlane Makefile Targets
 BLOCKS = $(shell cd openlane && find * -maxdepth 0 -type d)
 .PHONY: $(BLOCKS)
