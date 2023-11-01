@@ -1,0 +1,6 @@
+[submodule "user_prj/MulColRO"]
+	path = user_prj/MulColRO
+	url = https://github.com/thuat-nt/MulColRO.git
+[submodule "user_prj/UNIC-CASS_precheck_dac"]
+	path = user_prj/UNIC-CASS_precheck_dac
+	url = https://github.com/apaj/UNIC-CASS_precheck_dac.git
