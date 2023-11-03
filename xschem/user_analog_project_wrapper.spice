@@ -1,3 +1,4 @@
+** sch_path: /home/cass/projects/unic-cass-ic4/xschem/user_analog_project_wrapper.sch
 .subckt user_analog_project_wrapper vdda1 vdda2 vssa1 vssa2 vccd1 vccd2 vssd1 vssd2 wb_clk_i
 + wb_rst_i wbs_stb_i wbs_cyc_i wbs_we_i wbs_sel_i[3] wbs_sel_i[2] wbs_sel_i[1] wbs_sel_i[0] wbs_dat_i[31]
 + wbs_dat_i[30] wbs_dat_i[29] wbs_dat_i[28] wbs_dat_i[27] wbs_dat_i[26] wbs_dat_i[25] wbs_dat_i[24] wbs_dat_i[23]
@@ -88,68 +89,149 @@
 *+ wbs_dat_o[31:0]:O la_data_in[127:0]:I la_data_out[127:0]:O io_in[26:0]:I io_in_3v3[26:0]:I user_clock2:I
 *+ io_out[26:0]:O io_oeb[26:0]:O gpio_analog[17:0]:B gpio_noesd[17:0]:B io_analog[10:0]:B io_clamp_high[2:0]:B
 *+ io_clamp_low[2:0]:B user_irq[2:0]:O la_oenb[127:0]:I
-x1 vdda1 vccd1 gpio_analog[3] io_out[11] io_out[12] vssa1 example_por
-x2 io_analog[4] vccd1 gpio_analog[7] io_out[15] io_out[16] vssa1 example_por
-R1 vssa1 io_clamp_low[2] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R2 vssa1 io_clamp_high[2] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R4 vssa1 io_clamp_low[1] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R5 vssa1 io_clamp_high[1] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R6 vssa1 io_clamp_low[0] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R7 io_analog[4] io_clamp_high[0] sky130_fd_pr__res_generic_m3 W=11 L=0.25 m=1
-R8 vssd1 io_oeb[12] sky130_fd_pr__res_generic_m3 W=0.56 L=0.49 m=1
-R9 vssd1 io_oeb[16] sky130_fd_pr__res_generic_m3 W=0.56 L=0.31 m=1
-R11 vssd1 io_oeb[11] sky130_fd_pr__res_generic_m3 W=0.56 L=0.58 m=1
-R12 vssd1 io_oeb[15] sky130_fd_pr__res_generic_m3 W=0.56 L=0.6 m=1
+x3 vccd2 vssd2 gpio_analog[11] gpio_analog[12] gpio_analog[13] gpio_analog[14] gpio_analog[15]
++ gpio_analog[10] gpio_analog[9] gpio_analog[8] gpio_analog[7] io_analog[10] io_analog[9] io_analog[8] io_analog[7]
++ la_data_out[5] io_in[23] la_data_out[4] la_data_out[3] la_data_out[2] la_data_out[1] la_data_out[0] MulColROs
 .ends
 
-* expanding   symbol:  example_por.sym # of pins=6
-* sym_path: /home/kanobailey/sky130/mpw-9/caravel_user_project_analog/xschem/example_por.sym
-* sch_path: /home/kanobailey/sky130/mpw-9/caravel_user_project_analog/xschem/example_por.sch
-.subckt example_por  vdd3v3 vdd1v8 porb_h porb_l por_l vss
-*.PININFO vdd3v3:B vss:B porb_h:O porb_l:O por_l:O vdd1v8:B
-XC1 net9 vss sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=1 m=1
-XC2 vss net9 sky130_fd_pr__cap_mim_m3_2 W=30 L=30 MF=1 m=1
-XM1 net3 net7 net5 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM2 net2 net3 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XR1 net4 vdd3v3 vss sky130_fd_pr__res_xhigh_po_0p69 L=500 mult=1 m=1
-XM4 net5 net6 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM5 net3 net3 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.8 W=14 nf=7 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XR2 vss net4 vss sky130_fd_pr__res_xhigh_po_0p69 L=150 mult=1 m=1
-XM7 net2 net2 net1 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM8 net1 net1 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=14 nf=7 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM10 net7 net4 vss vss sky130_fd_pr__nfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1 
-XM9 net7 net7 net6 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM11 net6 net6 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=16 nf=8 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM12 net8 net1 vdd3v3 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XM13 net9 net2 net8 vdd3v3 sky130_fd_pr__pfet_g5v0d10v5 L=0.8 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1 
-XR3 vss vss vss sky130_fd_pr__res_xhigh_po_0p69 L=25 mult=2 m=2
-x2 net10 vss vss vdd3v3 vdd3v3 porb_h sky130_fd_sc_hvl__buf_8
-x3 net10 vss vss vdd1v8 vdd1v8 porb_l sky130_fd_sc_hvl__buf_8
-x4 net10 vss vss vdd1v8 vdd1v8 por_l sky130_fd_sc_hvl__inv_8
-x5 net9 vss vss vdd3v3 vdd3v3 net10 sky130_fd_sc_hvl__schmittbuf_1
+* expanding   symbol:  MulColROs.sym # of pins=16
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/MulColROs.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/MulColROs.sch
+.subckt MulColROs VDD GROUND AIn0 AIn[3] AIn[2] AIn[1] AIn[0] AIn2 AIn3 AIn4 AIn5 AOut[3] AOut[2]
++ AOut[1] AOut[0] REG0 REG1 REG2 REG3 REG4 REG5 REG6
+*.PININFO REG1:I REG2:I REG3:I REG0:I REG5:I REG6:I REG4:I AIn0:I AIn[3:0]:I AIn2:I AIn3:I AIn4:I
+*+ AIn5:I GROUND:B VDD:B AOut[3:0]:O
+xMulColROs[3] VDD GROUND AIn0 AOut[3] AIn[3] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5 REG6
++ ColROs
+xMulColROs[2] VDD GROUND AIn0 AOut[2] AIn[2] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5 REG6
++ ColROs
+xMulColROs[1] VDD GROUND AIn0 AOut[1] AIn[1] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5 REG6
++ ColROs
+xMulColROs[0] VDD GROUND AIn0 AOut[0] AIn[0] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5 REG6
++ ColROs
 .ends
 
-** flattened .save nodes
+
+* expanding   symbol:  ColROs.sym # of pins=16
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/ColROs.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/ColROs.sch
+.subckt ColROs VDD GROUND AIn0 AOut AIn1 AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5 REG6
+*.PININFO AOut:O REG1:I REG2:I REG3:I REG0:I REG5:I REG6:I REG4:I AIn0:I AIn1:I AIn2:I AIn3:I AIn4:I
+*+ AIn5:I GROUND:I VDD:I
+x1 AIn3 net1 AIn0 AIn1 AIn2 VDD GROUND diffamp
+x2 REG3 REG2 net1 net2 AIn4 REG0 AIn5 REG1 REG5 REG4 VDD GROUND integrator
+x7 AIn4 net3 AOut GROUND VDD buffer
+x3 REG6 net2 net3 net1 VDD GROUND mux2_1
+.ends
+
+
+* expanding   symbol:  diffamp/diffamp.sym # of pins=7
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/diffamp/diffamp.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/diffamp/diffamp.sch
+.subckt diffamp PCAS OUT REF PIX GM_BIAS VDD VSS
+*.PININFO PCAS:I PIX:I REF:I GM_BIAS:I OUT:O VSS:B VDD:B
+XM17 net4 GM_BIAS VSS VSS sky130_fd_pr__nfet_01v8_lvt L=15 W=20 nf=2 m=1
+XM8 net2 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=15 W=90 nf=3 m=1
+XM1 net3 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=15 W=90 nf=3 m=1
+XM2 OUT PCAS net2 VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=90 nf=3 m=1
+XM4 net1 PCAS net3 VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=90 nf=3 m=1
+XM5 OUT PIX net4 VSS sky130_fd_pr__nfet_01v8_lvt L=3.5 W=800 nf=35 m=1
+XM6 net1 REF net4 VSS sky130_fd_pr__nfet_01v8_lvt L=3.5 W=800 nf=35 m=1
+.ends
+
+
+* expanding   symbol:  Integrator/integrator.sym # of pins=12
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/Integrator/integrator.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/Integrator/integrator.sch
+.subckt integrator sw2 sw1 intin intout opbias en Vtune rst sw4 sw3 VDD VSS
+*.PININFO intin:I Vtune:I intout:O opbias:I sw1:I sw2:I rst:I en:I sw3:I sw4:I VDD:B VSS:B
+XC1 net3 intout sky130_fd_pr__cap_mim_m3_1 W=30 L=30 m=1
+XC2 net2 intout sky130_fd_pr__cap_mim_m3_1 W=30 L=30 m=1
+x9 sw2 net2 net1 VDD VSS switch
+x1 sw1 net3 net1 VDD VSS switch
+x3 Vtune intin VDD VSS curr_mir
+x4 opbias VSS net1 intout VSS VDD opamp
+x5 rst intout net1 VDD VSS switch
+x6 en VSS intin VDD VSS switch
+x7 VDD en net4 VSS not
+x2 net4 net1 intin VDD VSS switch
+XC3 net5 intout sky130_fd_pr__cap_mim_m3_1 W=30 L=30 m=1
+x10 sw3 net5 net1 VDD VSS switch
+XC4 net6 intout sky130_fd_pr__cap_mim_m3_1 W=30 L=30 m=1
+x8 sw4 net6 net1 VDD VSS switch
+.ends
+
+
+* expanding   symbol:  buffer/buffer.sym # of pins=5
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/buffer/buffer.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/buffer/buffer.sch
+.subckt buffer opbias in out VSS VDD
+*.PININFO in:I opbias:I out:O VSS:B VDD:B
+x1 opbias in out out VSS VDD opamp
+.ends
+
+
+* expanding   symbol:  mux2_1/mux2_1.sym # of pins=6
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/mux2_1/mux2_1.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/mux2_1/mux2_1.sch
+.subckt mux2_1 SEL0 IN1 OUT IN0 VDD VSS
+*.PININFO SEL0:I OUT:O IN1:I IN0:I VDD:B VSS:B
+x1 VDD SEL0 net1 VSS not
+x6 SEL0 OUT IN1 VDD VSS switch
+x5 net1 OUT IN0 VDD VSS switch
+.ends
+
+
+* expanding   symbol:  switch/switch.sym # of pins=5
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/switch/switch.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/switch/switch.sch
+.subckt switch toggle out in VDD VSS
+*.PININFO toggle:I in:I out:O VDD:B VSS:B
+x1 VDD toggle net1 VSS not
+XM26 out net1 in out sky130_fd_pr__pfet_01v8_lvt L=0.35 W=200 nf=5 m=1
+XM17 in toggle out VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=200 nf=5 m=1
+.ends
+
+
+* expanding   symbol:  current_mirror/curr_mir.sym # of pins=4
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/current_mirror/curr_mir.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/current_mirror/curr_mir.sch
+.subckt curr_mir Vtune Ib VDD VSS
+*.PININFO VSS:B VDD:B Vtune:I Ib:B
+XM1 net1 net1 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=2 W=50 nf=1 m=1
+XM2 Ib net1 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=2 W=50 nf=1 m=1
+XM10 net1 Vtune VDD VDD sky130_fd_pr__pfet_01v8_lvt L=10 W=10 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  opamp/opamp.sym # of pins=6
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/opamp/opamp.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/opamp/opamp.sch
+.subckt opamp opbias inp inn out VSS VDD
+*.PININFO inp:I inn:I opbias:I out:O VDD:B VSS:B
+XC1 net5 out sky130_fd_pr__cap_mim_m3_1 W=2 L=4 m=1
+XC2 out net4 sky130_fd_pr__cap_mim_m3_1 W=2 L=4 m=1
+XM26 net2 opbias VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=4 m=1
+XM3 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=2 m=1
+XM4 net5 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=2 m=1
+XM10 out net5 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=100 nf=5 m=1
+XM17 out net4 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=80 nf=5 m=1
+XM19 net4 net3 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=5 nf=1 m=1
+XM20 net3 net3 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=5 nf=1 m=1
+XM2 net1 net4 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=8 nf=1 m=1
+XM5 net5 net3 VSS VSS sky130_fd_pr__nfet_01v8_lvt L=3 W=8 nf=1 m=1
+XM1 net3 inn net2 VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=15 nf=3 m=1
+XM6 net4 inp net2 VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=15 nf=3 m=1
+.ends
+
+
+* expanding   symbol:  not/not.sym # of pins=4
+** sym_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/not/not.sym
+** sch_path: /home/cass/projects/unic-cass-ic4/user_prj/MulColRO/xschem/not/not.sch
+.subckt not VDD in out VSS
+*.PININFO in:I out:O VDD:B VSS:B
+XM10 out in VDD VDD sky130_fd_pr__pfet_01v8_lvt L=0.35 W=2 nf=1 m=1
+XM1 out in VSS VSS sky130_fd_pr__nfet_01v8_lvt L=0.35 W=1 nf=1 m=1
+.ends
+
 .end
