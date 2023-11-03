@@ -1,4 +1,4 @@
-v {xschem version=3.4.1 file_version=1.2
+v {xschem version=3.1.0 file_version=1.2
 }
 G {}
 K {}
@@ -36,7 +36,25 @@ lab=la_data_out[1]}
 N 4220 -520 4290 -520 {
 lab=la_data_out[0]}
 N 4590 -720 4640 -720 {
-lab=gpio_analog[11]}
+lab=io_analog[10:7]}
+N 4450 -170 4520 -170 {
+lab=io_in_3v3[8]}
+N 4450 -150 4520 -150 {
+lab=io_in_3v3[9]}
+N 4450 -130 4520 -130 {
+lab=io_in_3v3[10]}
+N 4450 -110 4520 -110 {
+lab=io_analog[0]}
+N 4450 -90 4520 -90 {
+lab=io_in_3v3[11]}
+N 4450 -70 4520 -70 {
+lab=gpio_analog[6]}
+N 4450 -50 4520 -50 {
+lab=gpio_analog[5]}
+N 4450 -30 4520 -30 {
+lab=vdda1}
+N 4450 -10 4520 -10 {
+lab=vssd2}
 C {devices/iopin.sym} 3240 -470 0 0 {name=p1 lab=vdda1}
 C {devices/iopin.sym} 3240 -440 0 0 {name=p2 lab=vdda2}
 C {devices/iopin.sym} 3240 -410 0 0 {name=p3 lab=vssa1}
@@ -86,3 +104,13 @@ C {devices/lab_pin.sym} 4220 -700 0 0 {name=l45 sig_type=std_logic lab=gpio_anal
 C {devices/lab_pin.sym} 4220 -680 0 0 {name=l46 sig_type=std_logic lab=gpio_analog[8]}
 C {devices/lab_pin.sym} 4220 -660 0 0 {name=l47 sig_type=std_logic lab=gpio_analog[7]}
 C {devices/lab_pin.sym} 4640 -720 0 1 {name=l48 sig_type=std_logic lab=io_analog[10:7]}
+C {dac_top_cell.sym} 4300 -90 0 0 {name=x1}
+C {devices/lab_pin.sym} 4520 -170 2 0 {name=l1 sig_type=std_logic lab=io_in_3v3[8]}
+C {devices/lab_pin.sym} 4520 -150 2 0 {name=l2 sig_type=std_logic lab=io_in_3v3[9]}
+C {devices/lab_pin.sym} 4520 -130 2 0 {name=l3 sig_type=std_logic lab=io_in_3v3[10]}
+C {devices/lab_pin.sym} 4520 -90 2 0 {name=l4 sig_type=std_logic lab=io_in_3v3[11]}
+C {devices/lab_pin.sym} 4520 -110 0 1 {name=l5 sig_type=std_logic lab=io_analog[0]}
+C {devices/lab_pin.sym} 4520 -10 0 1 {name=l6 sig_type=std_logic lab=vssa2}
+C {devices/lab_pin.sym} 4520 -30 0 1 {name=l7 sig_type=std_logic lab=vdda1}
+C {devices/lab_pin.sym} 4520 -70 2 0 {name=l8 sig_type=std_logic lab=gpio_analog[6]}
+C {devices/lab_pin.sym} 4520 -50 2 0 {name=l9 sig_type=std_logic lab=gpio_analog[5]}
