@@ -658,6 +658,6 @@ XMulColROs_0 vccd2 io_analog[10] io_analog[9] io_analog[8] io_analog[7] la_data_
 + gpio_analog[7] gpio_analog[8] gpio_analog[9] gpio_analog[10] gpio_analog[11] gpio_analog[12]
 + gpio_analog[13] gpio_analog[14] gpio_analog[15] vssd2 MulColROs
 Xdac_top_cell_0 io_in_3v3[8] io_in_3v3[9] io_in_3v3[10] io_in_3v3[11] gpio_analog[5]
-+ vssd2 vdda1 dac_top_cell_0/out dac_top_cell_0/vbias18 dac_top_cell
++ vssd2 vdda1 io_analog[0] gpio_analog[6] dac_top_cell
 .ends
 
