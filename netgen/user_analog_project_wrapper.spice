@@ -377,6 +377,6 @@ XxMulColROs[0] VDD AIn0 AIn[0] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG3 REG4 REG5
 XMulColROs_0 vccd2 io_analog[10] io_analog[9] io_analog[8] io_analog[7] la_data_out[0]
 + la_data_out[1] la_data_out[2] la_data_out[3] la_data_out[4] io_in[23] la_data_out[5]
 + gpio_analog[7] gpio_analog[8] gpio_analog[9] gpio_analog[10] gpio_analog[11] gpio_analog[12]
-+ gpio_analog[13] gpio_analog[14] gpio_analog[15] vssa2 MulColROs
++ gpio_analog[13] gpio_analog[14] gpio_analog[15] vssd2 MulColROs
 .ends
 
