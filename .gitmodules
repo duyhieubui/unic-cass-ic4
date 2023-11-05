@@ -4,3 +4,6 @@
 [submodule "user_prj/UNIC-CASS_precheck_dac"]
 	path = user_prj/UNIC-CASS_precheck_dac
 	url = https://github.com/apaj/UNIC-CASS_precheck_dac.git
+[submodule "user_prj/ULQC_LDO"]
+	path = user_prj/ULQC_LDO
+	url = https://github.com/bluecoffee093/ULQC_LDO.git

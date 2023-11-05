@@ -36,13 +36,8 @@ append XSCHEM_LIBRARY_PATH ${XSCHEM_SHAREDIR}/xschem_library
 #### include skywater libraries. Here i use [pwd]. This works if i start xschem from here.
 append XSCHEM_LIBRARY_PATH :$env(PWD)
 append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/MulColRO/xschem
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/xschem/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/dac_cell1/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/dac_cell2/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/dac_cell3/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/dac_cell4/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/esd_cell/tb
-append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev/opamp
+append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/UNIC-CASS_precheck_dac/dev
+append XSCHEM_LIBRARY_PATH :$env(PWD)/../user_prj/ULQC_LDO/xschem
 append XSCHEM_LIBRARY_PATH :$PDKPATH/libs.tech/xschem
 # append XSCHEM_LIBRARY_PATH :/mnt/sda7/home/schippes/pdks/sky130A/libs.tech/xschem
 #### add ~/.xschem/xschem_library (USER_CONF_DIR is normally ~/.xschem)
