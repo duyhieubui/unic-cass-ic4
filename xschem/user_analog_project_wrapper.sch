@@ -220,7 +220,7 @@ C {devices/lab_pin.sym} 4220 -700 0 0 {name=l45 sig_type=std_logic lab=gpio_anal
 C {devices/lab_pin.sym} 4220 -680 0 0 {name=l46 sig_type=std_logic lab=gpio_analog[8]}
 C {devices/lab_pin.sym} 4220 -660 0 0 {name=l47 sig_type=std_logic lab=gpio_analog[7]}
 C {devices/lab_pin.sym} 4640 -720 0 1 {name=l48 sig_type=std_logic lab=io_analog[10:7]}
-C {dac_top_cell.sym} 4250 -260 0 0 {name=x1}
+C {top_cell_esd/tb/dac_top_cell.sym} 4250 -260 0 0 {name=x1}
 C {devices/lab_pin.sym} 4470 -340 2 0 {name=l1 sig_type=std_logic lab=io_in_3v3[8]}
 C {devices/lab_pin.sym} 4470 -320 2 0 {name=l2 sig_type=std_logic lab=io_in_3v3[9]}
 C {devices/lab_pin.sym} 4470 -300 2 0 {name=l3 sig_type=std_logic lab=io_in_3v3[10]}
