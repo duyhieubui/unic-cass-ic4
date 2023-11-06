@@ -94,21 +94,35 @@ x3 vccd2 mulcolros_vss gpio_analog[11] gpio_analog[12] gpio_analog[13] gpio_anal
 + io_analog[8] io_analog[7] la_data_out[5] io_in[23] la_data_out[4] la_data_out[3] la_data_out[2] la_data_out[1]
 + la_data_out[0] MulColROs
 x2 io_analog[6] ulqc_ldo_vss gpio_analog[3] gpio_analog[4] gpio_analog[2] io_analog[5] ulqc_ldo
-R0 io_oeb[11] la_data_out[124] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
+R0 io_oeb[8] la_data_out[124] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R1 vssa1 dac_top_cell_vgnd sky130_fd_pr__res_generic_m4 W=21 L=10 m=1
-R2 io_oeb[8] la_data_out[127] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
+R2 io_oeb[5] la_data_out[127] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R3 vssd2 mulcolros_vss sky130_fd_pr__res_generic_m4 W=30 L=80.6 m=1
 R4 io_clamp_high[2] io_analog[6] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
-R5 io_oeb[10] la_data_out[125] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
+R5 io_oeb[7] la_data_out[125] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R6 vssa1 io_clamp_low[2] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R7 vssa1 io_clamp_low[0] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R8 io_clamp_high[1] io_analog[5] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R9 vssa1 io_clamp_low[1] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
-R10 io_oeb[9] la_data_out[126] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
+R10 io_oeb[6] la_data_out[126] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R11 vssa1 io_clamp_high[0] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R12 vssa2 ulqc_ldo_vss sky130_fd_pr__res_generic_m5 W=40 L=20 m=1
-x1 io_in_3v3[8] io_in_3v3[9] io_in_3v3[10] io_analog[0] io_in_3v3[11] gpio_analog[6] gpio_analog[5]
+x1 io_in_3v3[5] io_in_3v3[6] io_in_3v3[7] io_analog[0] io_in_3v3[8] gpio_analog[6] gpio_analog[5]
 + vdda1 dac_top_cell_vgnd dac_top_cell
+R13 io_oeb[9] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
+R14 io_oeb[10] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
+R15 io_oeb[11] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
+R16 io_oeb[12] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
+R17 io_oeb[13] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
+R18 io_oeb[14] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R19 io_oeb[15] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R20 io_oeb[16] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R21 io_oeb[17] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R22 io_oeb[18] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R23 io_oeb[19] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R24 io_oeb[20] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R25 io_oeb[21] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R26 io_oeb[22] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 .ends
 
 * expanding   symbol:  MulColROs.sym # of pins=16
