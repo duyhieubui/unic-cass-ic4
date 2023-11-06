@@ -113,25 +113,36 @@ VSS                                        |VSS
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes curr_mir and curr_mir are equivalent.
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_lvt_CEE7V5 in circuit opamp (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_lvt_8WRJS5 in circuit opamp (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_01v8_lvt_HZEGLD in circuit opamp (0)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_01v8_lvt_RFVHWA in circuit opamp (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__nfet_01v8_lvt_7233E2 in circuit opamp (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_lvt_CEAZV5 in circuit opamp (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__cap_mim_m3_1_ZYFHHD in circuit opamp (0)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_lvt_LEXMNV in circuit opamp (0)(1 instance)
 
-Circuit 2 cell opamp is a black box; will not flatten Circuit 1
-Warning: Equate pins:  cell opamp is a placeholder, treated as a black box.
+Class opamp (0):  Merged 17 parallel devices.
+Subcircuit summary:
+Circuit 1: opamp                           |Circuit 2: opamp                           
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__pfet_01v8_lvt (19->6)        |sky130_fd_pr__pfet_01v8_lvt (6)            
+sky130_fd_pr__nfet_01v8_lvt (9->5)         |sky130_fd_pr__nfet_01v8_lvt (5)            
+sky130_fd_pr__cap_mim_m3_1 (2)             |sky130_fd_pr__cap_mim_m3_1 (2)             
+Number of devices: 13                      |Number of devices: 13                      
+Number of nets: 11                         |Number of nets: 11                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
 
 Subcircuit pins:
 Circuit 1: opamp                           |Circuit 2: opamp                           
 -------------------------------------------|-------------------------------------------
-(no matching pin)                          |1                                          
-(no matching pin)                          |2                                          
-(no matching pin)                          |3                                          
-(no matching pin)                          |4                                          
-(no matching pin)                          |5                                          
-(no matching pin)                          |6                                          
-opbias                                     |(no matching pin)                          
-inp                                        |(no matching pin)                          
-inn                                        |(no matching pin)                          
-VDD                                        |(no matching pin)                          
-out                                        |(no matching pin)                          
-VSS                                        |(no matching pin)                          
+out                                        |out                                        
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+opbias                                     |opbias                                     
+inp                                        |inp                                        
+inn                                        |inn                                        
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes opamp and opamp are equivalent.
@@ -263,85 +274,30 @@ opamp (1)                                  |opamp (1)
 not (1)                                    |not (1)                                    
 sky130_fd_pr__cap_mim_m3_1 (4)             |sky130_fd_pr__cap_mim_m3_1 (4)             
 Number of devices: 14                      |Number of devices: 14                      
-Number of nets: 24                         |Number of nets: 24                         
+Number of nets: 18                         |Number of nets: 18                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
 Circuit 1: integrator                      |Circuit 2: integrator                      
-
+-------------------------------------------|-------------------------------------------
+intout                                     |intout                                     
+intin                                      |intin                                      
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+Vtune                                      |Vtune                                      
+opbias                                     |opbias                                     
+rst                                        |rst                                        
+sw3                                        |sw3                                        
+sw2                                        |sw2                                        
+sw4                                        |sw4                                        
+sw1                                        |sw1                                        
+en                                         |en                                         
 ---------------------------------------------------------------------------------------
-Net: intout                                |Net: intout                                
-  opamp/out = 1                            |  opamp/4 = 1                              
-  switch/out = 1                           |  switch/out = 1                           
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VDD                                   |Net: VDD                                   
-  switch/VDD = 7                           |  switch/VDD = 7                           
-  curr_mir/VDD = 1                         |  curr_mir/VDD = 1                         
-  opamp/VDD = 1                            |  opamp/6 = 1                              
-  not/VDD = 1                              |  not/VDD = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VSS                                   |Net: VSS                                   
-  switch/VSS = 7                           |  switch/VSS = 7                           
-  curr_mir/VSS = 1                         |  curr_mir/VSS = 1                         
-  opamp/inp = 1                            |  opamp/2 = 1                              
-  opamp/VSS = 1                            |  opamp/5 = 1                              
-  switch/out = 1                           |  switch/out = 1                           
-  not/VSS = 1                              |  not/VSS = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: dummy_24                              |Net: dummy_24                              
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: dummy_23                              |Net: dummy_23                              
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: dummy_22                              |Net: dummy_22                              
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: dummy_21                              |Net: dummy_21                              
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: dummy_20                              |Net: dummy_20                              
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: dummy_19                              |Net: dummy_19                              
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: opbias                                |Net: opbias                                
-  opamp/opbias = 1                         |  opamp/1 = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: x9/in                                 |Net: net1                                  
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  switch/out = 1                           
-  opamp/inn = 1                            |  opamp/3 = 1                              
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: integrator                      |Circuit 2: integrator                      
-
----------------------------------------------------------------------------------------
-Instance: opamp:x4                         |Instance: opamp:4                          
-  opbias = 1                               |  proxyopbias = 1                          
-  inp = 12                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 10                                 |  proxyVDD = 1                             
-  out = 6                                  |  proxyout = 1                             
-  VSS = 12                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 1                                    
-  proxy2 = 1                               |  2 = 12                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 6                                    
-  proxy5 = 1                               |  5 = 12                                   
-  proxy6 = 1                               |  6 = 10                                   
----------------------------------------------------------------------------------------
-Netlists do not match.
-  Flattening non-matched subcircuits integrator integrator
+Cell pin lists are equivalent.
+Device classes integrator and integrator are equivalent.
 
 Subcircuit summary:
 Circuit 1: mux2_1                          |Circuit 2: mux2_1                          
@@ -371,68 +327,21 @@ Circuit 1: buffer                          |Circuit 2: buffer
 -------------------------------------------|-------------------------------------------
 opamp (1)                                  |opamp (1)                                  
 Number of devices: 1                       |Number of devices: 1                       
-Number of nets: 11                         |Number of nets: 11                         
+Number of nets: 5                          |Number of nets: 5                          
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
+Netlists match uniquely.
+
+Subcircuit pins:
 Circuit 1: buffer                          |Circuit 2: buffer                          
-
+-------------------------------------------|-------------------------------------------
+out                                        |out                                        
+opbias                                     |opbias                                     
+in                                         |in                                         
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
 ---------------------------------------------------------------------------------------
-Net: out                                   |Net: out                                   
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: dummy_11                              |Net: dummy_11                              
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: dummy_10                              |Net: dummy_10                              
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: dummy_9                               |Net: dummy_9                               
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: dummy_8                               |Net: dummy_8                               
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: dummy_7                               |Net: dummy_7                               
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: dummy_6                               |Net: dummy_6                               
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: VDD                                   |Net: VDD                                   
-  opamp/VDD = 1                            |  opamp/6 = 1                              
-                                           |                                           
-Net: VSS                                   |Net: VSS                                   
-  opamp/VSS = 1                            |  opamp/5 = 1                              
-                                           |                                           
-Net: in                                    |Net: in                                    
-  opamp/inp = 1                            |  opamp/2 = 1                              
-                                           |                                           
-Net: opbias                                |Net: opbias                                
-  opamp/opbias = 1                         |  opamp/1 = 1                              
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: buffer                          |Circuit 2: buffer                          
-
----------------------------------------------------------------------------------------
-Instance: opamp:x1                         |Instance: opamp:1                          
-  opbias = 1                               |  proxyopbias = 1                          
-  inp = 1                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 1                                  |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 1                                  |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 1                                    
-  proxy2 = 1                               |  2 = 1                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 1                                    
-  proxy6 = 1                               |  6 = 1                                    
----------------------------------------------------------------------------------------
-Netlists do not match.
-  Flattening non-matched subcircuits buffer buffer
+Cell pin lists are equivalent.
+Device classes buffer and buffer are equivalent.
 
 Circuit 1 cell sky130_fd_pr__res_high_po_5p73 and Circuit 2 cell sky130_fd_pr__res_high_po_5p73 are black boxes.
 Warning: Equate pins:  cell sky130_fd_pr__res_high_po_5p73 is a placeholder, treated as a black box.
@@ -480,137 +389,36 @@ Subcircuit summary:
 Circuit 1: ColROs                          |Circuit 2: ColROs                          
 -------------------------------------------|-------------------------------------------
 diffamp (1)                                |diffamp (1)                                
-switch (7)                                 |switch (7)                                 
-curr_mir (1)                               |curr_mir (1)                               
-opamp (2)                                  |opamp (2)                                  
-not (1)                                    |not (1)                                    
-sky130_fd_pr__cap_mim_m3_1 (4)             |sky130_fd_pr__cap_mim_m3_1 (4)             
+integrator (1)                             |integrator (1)                             
 mux2_1 (1)                                 |mux2_1 (1)                                 
-Number of devices: 17                      |Number of devices: 17                      
-Number of nets: 37                         |Number of nets: 37                         
+buffer (1)                                 |buffer (1)                                 
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 19                         |Number of nets: 19                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
+Netlists match uniquely.
+
+Subcircuit pins:
 Circuit 1: ColROs                          |Circuit 2: ColROs                          
-
+-------------------------------------------|-------------------------------------------
+AIn4                                       |AIn4                                       
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+AIn3                                       |AIn3                                       
+AIn0                                       |AIn0                                       
+AIn1                                       |AIn1                                       
+AIn2                                       |AIn2                                       
+REG3                                       |REG3                                       
+REG2                                       |REG2                                       
+REG0                                       |REG0                                       
+AIn5                                       |AIn5                                       
+REG1                                       |REG1                                       
+REG5                                       |REG5                                       
+REG4                                       |REG4                                       
+AOut                                       |AOut                                       
+REG6                                       |REG6                                       
 ---------------------------------------------------------------------------------------
-Net: integrator:x2/x9/in                   |Net: integrator:2/net1                     
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: x3/IN1                                |Net: net2                                  
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: AOut                                  |Net: AOut                                  
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: x7/in                                 |Net: net3                                  
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: AIn4                                  |Net: AIn4                                  
-  opamp/opbias = 2                         |  opamp/1 = 2                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VSS                                   |Net: VSS                                   
-  diffamp/VSS = 1                          |  diffamp/VSS = 1                          
-  switch/VSS = 7                           |  switch/VSS = 7                           
-  curr_mir/VSS = 1                         |  curr_mir/VSS = 1                         
-  opamp/inp = 1                            |  opamp/2 = 1                              
-  opamp/VSS = 2                            |  opamp/5 = 2                              
-  switch/out = 1                           |  switch/out = 1                           
-  not/VSS = 1                              |  not/VSS = 1                              
-  mux2_1/VSS = 1                           |  mux2_1/VSS = 1                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VDD                                   |Net: VDD                                   
-  diffamp/VDD = 1                          |  diffamp/VDD = 1                          
-  switch/VDD = 7                           |  switch/VDD = 7                           
-  curr_mir/VDD = 1                         |  curr_mir/VDD = 1                         
-  opamp/VDD = 2                            |  opamp/6 = 2                              
-  not/VDD = 1                              |  not/VDD = 1                              
-  mux2_1/VDD = 1                           |  mux2_1/VDD = 1                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: buffer:x7/dummy_11                    |Net: buffer:7/dummy_11                     
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: buffer:x7/dummy_10                    |Net: buffer:7/dummy_10                     
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: buffer:x7/dummy_9                     |Net: buffer:7/dummy_9                      
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: buffer:x7/dummy_8                     |Net: buffer:7/dummy_8                      
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: buffer:x7/dummy_7                     |Net: buffer:7/dummy_7                      
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: buffer:x7/dummy_6                     |Net: buffer:7/dummy_6                      
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: integrator:x2/dummy_24                |Net: integrator:2/dummy_24                 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: integrator:x2/dummy_23                |Net: integrator:2/dummy_23                 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: integrator:x2/dummy_22                |Net: integrator:2/dummy_22                 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: integrator:x2/dummy_21                |Net: integrator:2/dummy_21                 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: integrator:x2/dummy_20                |Net: integrator:2/dummy_20                 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: integrator:x2/dummy_19                |Net: integrator:2/dummy_19                 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: ColROs                          |Circuit 2: ColROs                          
-
----------------------------------------------------------------------------------------
-Instance: buffer:x7/opamp:x1               |Instance: buffer:7/opamp:1                 
-  opbias = 2                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 13                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 15                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 2                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 15                                   
-  proxy6 = 1                               |  6 = 13                                   
-                                           |                                           
-Instance: integrator:x2/opamp:x4           |Instance: integrator:2/opamp:4             
-  opbias = 2                               |  proxyopbias = 1                          
-  inp = 15                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 13                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 15                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 2                                    
-  proxy2 = 1                               |  2 = 15                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 15                                   
-  proxy6 = 1                               |  6 = 13                                   
----------------------------------------------------------------------------------------
-Netlists do not match.
-  Flattening non-matched subcircuits ColROs ColROs
+Cell pin lists are equivalent.
+Device classes ColROs and ColROs are equivalent.
 Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p69_RV3JGD in circuit dac_cell3 (0)(4 instances)
 Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_FGUWVM#2 in circuit dac_cell3 (0)(1 instance)
 Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_FGR8VM in circuit dac_cell3 (0)(3 instances)
@@ -835,389 +643,42 @@ Device classes opamp#0 and opamp#0 are equivalent.
 Subcircuit summary:
 Circuit 1: MulColROs                       |Circuit 2: MulColROs                       
 -------------------------------------------|-------------------------------------------
-diffamp (4)                                |diffamp (4)                                
-switch (28)                                |switch (28)                                
-curr_mir (4)                               |curr_mir (4)                               
-opamp (8)                                  |opamp (8)                                  
-not (4)                                    |not (4)                                    
-sky130_fd_pr__cap_mim_m3_1 (16)            |sky130_fd_pr__cap_mim_m3_1 (16)            
-mux2_1 (4)                                 |mux2_1 (4)                                 
-Number of devices: 68                      |Number of devices: 68                      
-Number of nets: 106                        |Number of nets: 106                        
+ColROs (4)                                 |ColROs (4)                                 
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 22                         |Number of nets: 22                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
 Circuit 1: MulColROs                       |Circuit 2: MulColROs                       
-
+-------------------------------------------|-------------------------------------------
+AOut[0]                                    |AOut[0]                                    
+AOut[1]                                    |AOut[1]                                    
+AOut[2]                                    |AOut[2]                                    
+AOut[3]                                    |AOut[3]                                    
+AIn[0]                                     |AIn[0]                                     
+AIn[1]                                     |AIn[1]                                     
+AIn[2]                                     |AIn[2]                                     
+AIn[3]                                     |AIn[3]                                     
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+AIn0                                       |AIn0                                       
+AIn2                                       |AIn2                                       
+AIn3                                       |AIn3                                       
+AIn4                                       |AIn4                                       
+AIn5                                       |AIn5                                       
+REG0                                       |REG0                                       
+REG1                                       |REG1                                       
+REG2                                       |REG2                                       
+REG3                                       |REG3                                       
+REG4                                       |REG4                                       
+REG5                                       |REG5                                       
+REG6                                       |REG6                                       
 ---------------------------------------------------------------------------------------
-Net: ColROs:xMulColROs[0]/integrator:x2/x9 |Net: ColROs:MulColROs[0]/integrator:2/net1 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/x9 |Net: ColROs:MulColROs[1]/integrator:2/net1 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/x9 |Net: ColROs:MulColROs[2]/integrator:2/net1 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/x9 |Net: ColROs:MulColROs[3]/integrator:2/net1 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[0]/x3/IN1           |Net: ColROs:MulColROs[0]/net2              
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[1]/x3/IN1           |Net: ColROs:MulColROs[1]/net2              
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[2]/x3/IN1           |Net: ColROs:MulColROs[2]/net2              
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[3]/x3/IN1           |Net: ColROs:MulColROs[3]/net2              
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VSS                                   |Net: VSS                                   
-  diffamp/VSS = 4                          |  diffamp/VSS = 4                          
-  switch/VSS = 28                          |  switch/VSS = 28                          
-  curr_mir/VSS = 4                         |  curr_mir/VSS = 4                         
-  opamp/inp = 4                            |  opamp/2 = 4                              
-  opamp/VSS = 8                            |  opamp/5 = 8                              
-  switch/out = 4                           |  switch/out = 4                           
-  not/VSS = 4                              |  not/VSS = 4                              
-  mux2_1/VSS = 4                           |  mux2_1/VSS = 4                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: ColROs:xMulColROs[0]/x7/in            |Net: ColROs:MulColROs[0]/net3              
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[1]/x7/in            |Net: ColROs:MulColROs[1]/net3              
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[2]/x7/in            |Net: ColROs:MulColROs[2]/net3              
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: ColROs:xMulColROs[3]/x7/in            |Net: ColROs:MulColROs[3]/net3              
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: AOut[0]                               |Net: AOut[0]                               
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: AOut[1]                               |Net: AOut[1]                               
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: AOut[2]                               |Net: AOut[2]                               
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: AOut[3]                               |Net: AOut[3]                               
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: AIn4                                  |Net: AIn4                                  
-  opamp/opbias = 8                         |  opamp/1 = 8                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_11 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_11 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_11 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_11 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_10 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_10 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_10 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_10 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_9  
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_9  
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_9  
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_9  
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_8  
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_8  
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_8  
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_8  
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_7  
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_7  
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_7  
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_7  
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/buffer:x7/dummy_ |Net: ColROs:MulColROs[0]/buffer:7/dummy_6  
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[1]/buffer:x7/dummy_ |Net: ColROs:MulColROs[1]/buffer:7/dummy_6  
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[2]/buffer:x7/dummy_ |Net: ColROs:MulColROs[2]/buffer:7/dummy_6  
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[3]/buffer:x7/dummy_ |Net: ColROs:MulColROs[3]/buffer:7/dummy_6  
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: ColROs:xMulColROs[0]/integrator:x2/du |Net: ColROs:MulColROs[0]/integrator:2/dumm 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[1]/integrator:x2/du |Net: ColROs:MulColROs[1]/integrator:2/dumm 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[2]/integrator:x2/du |Net: ColROs:MulColROs[2]/integrator:2/dumm 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: ColROs:xMulColROs[3]/integrator:x2/du |Net: ColROs:MulColROs[3]/integrator:2/dumm 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VDD                                   |Net: VDD                                   
-  diffamp/VDD = 4                          |  diffamp/VDD = 4                          
-  switch/VDD = 28                          |  switch/VDD = 28                          
-  curr_mir/VDD = 4                         |  curr_mir/VDD = 4                         
-  opamp/VDD = 8                            |  opamp/6 = 8                              
-  not/VDD = 4                              |  not/VDD = 4                              
-  mux2_1/VDD = 4                           |  mux2_1/VDD = 4                           
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: MulColROs                       |Circuit 2: MulColROs                       
-
----------------------------------------------------------------------------------------
-Instance: ColROs:xMulColROs[0]/buffer:x7/o |Instance: ColROs:MulColROs[0]/buffer:7/opa 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[1]/buffer:x7/o |Instance: ColROs:MulColROs[1]/buffer:7/opa 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[2]/buffer:x7/o |Instance: ColROs:MulColROs[2]/buffer:7/opa 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[3]/buffer:x7/o |Instance: ColROs:MulColROs[3]/buffer:7/opa 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[0]/integrator: |Instance: ColROs:MulColROs[0]/integrator:2 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 60                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 60                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[1]/integrator: |Instance: ColROs:MulColROs[1]/integrator:2 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 60                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 60                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[2]/integrator: |Instance: ColROs:MulColROs[2]/integrator:2 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 60                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 60                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: ColROs:xMulColROs[3]/integrator: |Instance: ColROs:MulColROs[3]/integrator:2 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 60                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 60                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 60                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 60                                   
-  proxy6 = 1                               |  6 = 52                                   
----------------------------------------------------------------------------------------
-Netlists do not match.
-  Flattening non-matched subcircuits MulColROs MulColROs
+Cell pin lists are equivalent.
+Device classes MulColROs and MulColROs are equivalent.
 Flattening unmatched subcell sky130_fd_pr__res_high_po_5p73_6QQPRG in circuit dac_top_cell (0)(4 instances)
 Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_2p85_5DPYAB in circuit dac_top_cell (0)(4 instances)
 Flattening unmatched subcell sky130_fd_pr__res_xhigh_po_0p35_PZAK34 in circuit dac_top_cell (0)(4 instances)
@@ -2527,13 +1988,7 @@ Cell user_analog_project_wrapper (1) disconnected node: la_oenb[0]
 Subcircuit summary:
 Circuit 1: user_analog_project_wrapper     |Circuit 2: user_analog_project_wrapper     
 -------------------------------------------|-------------------------------------------
-diffamp (4)                                |diffamp (4)                                
-switch (28)                                |switch (28)                                
-curr_mir (4)                               |curr_mir (4)                               
-opamp (8)                                  |opamp (8)                                  
-not (4)                                    |not (4)                                    
-sky130_fd_pr__cap_mim_m3_1 (16)            |sky130_fd_pr__cap_mim_m3_1 (16)            
-mux2_1 (4)                                 |mux2_1 (4)                                 
+MulColROs (1)                              |MulColROs (1)                              
 dac_cell3 (1)                              |dac_cell3 (1)                              
 sky130_fd_pr__res_high_po_5p73 (4->1)      |sky130_fd_pr__res_high_po_5p73 (4->1)      
 dac_cell1 (1)                              |dac_cell1 (1)                              
@@ -2552,478 +2007,89 @@ sky130_fd_pr__res_generic_m2 (4)           |sky130_fd_pr__res_generic_m2 (4)
 sky130_fd_pr__res_generic_m4 (2)           |sky130_fd_pr__res_generic_m4 (2)           
 sky130_fd_pr__res_generic_m3 (6)           |sky130_fd_pr__res_generic_m3 (6)           
 sky130_fd_pr__res_generic_m5 (1)           |sky130_fd_pr__res_generic_m5 (1)           
-Number of devices: 120                     |Number of devices: 120                     
-Number of nets: 146 **Mismatch**           |Number of nets: 148 **Mismatch**           
+Number of devices: 53                      |Number of devices: 53                      
+Number of nets: 63                         |Number of nets: 63                         
 ---------------------------------------------------------------------------------------
-NET mismatches: Class fragments follow (with fanout counts):
-Circuit 1: user_analog_project_wrapper     |Circuit 2: user_analog_project_wrapper     
-
----------------------------------------------------------------------------------------
-Net: io_clamp_low[2]                       |Net: io_clamp_low[2]                       
-  sky130_fd_pr__res_generic_m3/(end_a|end_ |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-Net: io_clamp_low[0]                       |Net: io_clamp_low[0]                       
-  sky130_fd_pr__res_generic_m3/(end_a|end_ |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-Net: io_clamp_low[1]                       |Net: io_clamp_low[1]                       
-  sky130_fd_pr__res_generic_m3/(end_a|end_ |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-Net: io_clamp_high[0]                      |Net: io_clamp_high[0]                      
-  sky130_fd_pr__res_generic_m3/(end_a|end_ |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy1 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: net2                                  
-  opamp/proxy1 = 1                         |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: net1                                  
-  opamp/proxy1 = 1                         |  sky130_fd_pr__res_generic_m4/(end_a|end_ 
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  opamp/proxy1 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  opamp/proxy1 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  opamp/proxy1 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy1 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-  opamp/proxy2 = 1                         |  opamp/proxyopbias = 1                    
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy2 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-  opamp/proxy3 = 1                         |  opamp/proxyinp = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy3 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-  opamp/proxy4 = 1                         |  opamp/proxyinn = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy4 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-  opamp/proxy5 = 1                         |  opamp/proxyVDD = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy5 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/buf |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/buf |Net: MulColROs:3/ColROs:MulColROs[1]/buffe 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/buf |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-  opamp/proxy6 = 1                         |  opamp/proxyout = 1                       
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/buf |Net: MulColROs:3/ColROs:MulColROs[3]/buffe 
-  opamp/proxy6 = 1                         |  opamp/proxyVSS = 1                       
-                                           |                                           
-Net: dac_top_cell_0/vgnd                   |Net: MulColROs:3/ColROs:MulColROs[2]/buffe 
-  dac_cell3/iout = 1                       |  opamp/proxyVSS = 1                       
-  dac_cell3/vgnd = 1                       |                                           
-  sky130_fd_pr__res_high_po_5p73/(1|2) = 1 |                                           
-  sky130_fd_pr__res_high_po_5p73/3 = 1     |                                           
-  dac_cell1/iout = 1                       |                                           
-  dac_cell1/vgnd = 1                       |                                           
-  sky130_fd_pr__res_xhigh_po_2p85/3 = 1    |                                           
-  sky130_fd_pr__res_xhigh_po_0p35/3 = 1    |                                           
-  miel21_opamp/ground = 1                  |                                           
-  sky130_fd_pr__diode_pw2nd_05v5/anode = 6 |                                           
-  sky130_fd_pr__res_high_po/3 = 6          |                                           
-  sky130_fd_pr__diode_pw2nd_11v0/anode = 6 |                                           
-  dac_cell4/iout = 1                       |                                           
-  dac_cell4/vgnd = 1                       |                                           
-  dac_cell2/iout = 1                       |                                           
-  dac_cell2/vgnd = 1                       |                                           
-  sky130_fd_pr__res_generic_m4/(end_a|end_ |                                           
-                                           |                                           
-Net: vssa1                                 |Net: vssa1                                 
-  sky130_fd_pr__res_generic_m4/(end_a|end_ |  sky130_fd_pr__res_generic_m4/(end_a|end_ 
-  sky130_fd_pr__res_generic_m3/(end_a|end_ |  sky130_fd_pr__res_generic_m3/(end_a|end_ 
-                                           |                                           
-(no matching net)                          |Net: MulColROs:3/ColROs:MulColROs[0]/buffe 
-                                           |  opamp/proxyVSS = 1                       
-                                           |                                           
-(no matching net)                          |Net: dac_top_cell_vgnd                     
-                                           |  dac_cell2/iout = 1                       
-                                           |  dac_cell2/vgnd = 1                       
-                                           |  dac_cell3/iout = 1                       
-                                           |  dac_cell3/vgnd = 1                       
-                                           |  dac_cell4/iout = 1                       
-                                           |  dac_cell4/vgnd = 1                       
-                                           |  miel21_opamp/ground = 1                  
-                                           |  dac_cell1/iout = 1                       
-                                           |  dac_cell1/vgnd = 1                       
-                                           |  sky130_fd_pr__res_xhigh_po_2p85/3 = 1    
-                                           |  sky130_fd_pr__res_xhigh_po_0p35/3 = 1    
-                                           |  sky130_fd_pr__res_high_po_5p73/(1|2) = 1 
-                                           |  sky130_fd_pr__res_high_po_5p73/3 = 1     
-                                           |  sky130_fd_pr__diode_pw2nd_05v5/anode = 6 
-                                           |  sky130_fd_pr__res_high_po/3 = 6          
-                                           |  sky130_fd_pr__diode_pw2nd_11v0/anode = 6 
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: /MulColROs_0/ColROs:xMulColROs[0]/int |Net: MulColROs:3/ColROs:MulColROs[0]/integ 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/int |Net: MulColROs:3/ColROs:MulColROs[1]/integ 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/int |Net: MulColROs:3/ColROs:MulColROs[2]/integ 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/int |Net: MulColROs:3/ColROs:MulColROs[3]/integ 
-  switch/in = 5                            |  switch/in = 5                            
-  switch/out = 1                           |  opamp/3 = 1                              
-  opamp/inn = 1                            |  switch/out = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[0]/x3/ |Net: MulColROs:3/ColROs:MulColROs[0]/net2  
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/x3/ |Net: MulColROs:3/ColROs:MulColROs[1]/net2  
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/x3/ |Net: MulColROs:3/ColROs:MulColROs[2]/net2  
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/x3/ |Net: MulColROs:3/ColROs:MulColROs[3]/net2  
-  opamp/out = 1                            |  sky130_fd_pr__cap_mim_m3_1/2 = 4         
-  switch/out = 1                           |  opamp/4 = 1                              
-  sky130_fd_pr__cap_mim_m3_1/2 = 4         |  switch/out = 1                           
-  mux2_1/IN1 = 1                           |  mux2_1/IN1 = 1                           
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: VSUBS                                 |Net: VSUBS                                 
-  diffamp/VSS = 4                          |  diffamp/VSS = 4                          
-  switch/VSS = 28                          |  switch/VSS = 28                          
-  curr_mir/VSS = 4                         |  curr_mir/VSS = 4                         
-  opamp/inp = 4                            |  opamp/2 = 4                              
-  opamp/VSS = 8                            |  opamp/5 = 8                              
-  switch/out = 4                           |  switch/out = 4                           
-  not/VSS = 4                              |  not/VSS = 4                              
-  mux2_1/VSS = 4                           |  mux2_1/VSS = 4                           
-  ulqc_ldo/VSS = 1                         |  ulqc_ldo/VSS = 1                         
-  sky130_fd_pr__res_generic_m4/(end_a|end_ |  sky130_fd_pr__res_generic_m4/(end_a|end_ 
-  sky130_fd_pr__res_generic_m5/(end_a|end_ |  sky130_fd_pr__res_generic_m5/(end_a|end_ 
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: gpio_analog[8]                        |Net: gpio_analog[8]                        
-  opamp/opbias = 8                         |  opamp/1 = 8                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: /MulColROs_0/ColROs:xMulColROs[0]/x7/ |Net: MulColROs:3/ColROs:MulColROs[0]/net3  
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[1]/x7/ |Net: MulColROs:3/ColROs:MulColROs[1]/net3  
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[2]/x7/ |Net: MulColROs:3/ColROs:MulColROs[2]/net3  
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: /MulColROs_0/ColROs:xMulColROs[3]/x7/ |Net: MulColROs:3/ColROs:MulColROs[3]/net3  
-  mux2_1/OUT = 1                           |  opamp/2 = 1                              
-  opamp/inp = 1                            |  mux2_1/OUT = 1                           
-                                           |                                           
-Net: io_analog[7]                          |Net: io_analog[7]                          
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: io_analog[8]                          |Net: io_analog[8]                          
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: io_analog[9]                          |Net: io_analog[9]                          
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
-                                           |                                           
-Net: io_analog[10]                         |Net: io_analog[10]                         
-  opamp/inn = 1                            |  opamp/3 = 1                              
-  opamp/out = 1                            |  opamp/4 = 1                              
----------------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------------
-Net: vccd2                                 |Net: vccd2                                 
-  diffamp/VDD = 4                          |  diffamp/VDD = 4                          
-  switch/VDD = 28                          |  switch/VDD = 28                          
-  curr_mir/VDD = 4                         |  curr_mir/VDD = 4                         
-  opamp/VDD = 8                            |  opamp/6 = 8                              
-  not/VDD = 4                              |  not/VDD = 4                              
-  mux2_1/VDD = 4                           |  mux2_1/VDD = 4                           
----------------------------------------------------------------------------------------
-DEVICE mismatches: Class fragments follow (with node fanout counts):
-Circuit 1: user_analog_project_wrapper     |Circuit 2: user_analog_project_wrapper     
-
----------------------------------------------------------------------------------------
-Instance: MulColROs_0/ColROs:xMulColROs[0] |Instance: MulColROs:3/ColROs:MulColROs[0]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[1] |Instance: MulColROs:3/ColROs:MulColROs[1]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[2] |Instance: MulColROs:3/ColROs:MulColROs[2]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[3] |Instance: MulColROs:3/ColROs:MulColROs[3]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 2                                  |  proxyinp = 1                             
-  inn = 2                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 2                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 2                                    
-  proxy3 = 1                               |  3 = 2                                    
-  proxy4 = 1                               |  4 = 2                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[0] |Instance: MulColROs:3/ColROs:MulColROs[0]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 63                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 63                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[1] |Instance: MulColROs:3/ColROs:MulColROs[1]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 63                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 63                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[2] |Instance: MulColROs:3/ColROs:MulColROs[2]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 63                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 63                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
-                                           |                                           
-Instance: MulColROs_0/ColROs:xMulColROs[3] |Instance: MulColROs:3/ColROs:MulColROs[3]/ 
-  opbias = 8                               |  proxyopbias = 1                          
-  inp = 63                                 |  proxyinp = 1                             
-  inn = 7                                  |  proxyinn = 1                             
-  VDD = 52                                 |  proxyVDD = 1                             
-  out = 7                                  |  proxyout = 1                             
-  VSS = 63                                 |  proxyVSS = 1                             
-  proxy1 = 1                               |  1 = 8                                    
-  proxy2 = 1                               |  2 = 63                                   
-  proxy3 = 1                               |  3 = 7                                    
-  proxy4 = 1                               |  4 = 7                                    
-  proxy5 = 1                               |  5 = 63                                   
-  proxy6 = 1                               |  6 = 52                                   
----------------------------------------------------------------------------------------
-Netlists do not match.
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely with property errors.
+dac_top_cell_0//esd_structure_5//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:10/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_4//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:9/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_3//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:11/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_2//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:7/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_1//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:6/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_0//sky130_fd_pr__diode_pd2nw_05v5_K4SERG_0/sky130_fd_pr__diode_pd2nw_05v5:0 vs. dac_top_cell:1/esd_cell:8/sky130_fd_pr__diode_pd2nw_05v5:3:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_5//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:10/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_1//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:6/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_2//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:7/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_0//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:8/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_4//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:9/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_3//sky130_fd_pr__diode_pd2nw_11v0_PWJNKD_0/sky130_fd_pr__diode_pd2nw_11v0:0 vs. dac_top_cell:1/esd_cell:11/sky130_fd_pr__diode_pd2nw_11v0:1:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_5//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:10/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_1//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:6/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_2//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:7/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_0//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:8/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_4//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:9/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_3//sky130_fd_pr__diode_pw2nd_11v0_2UARL4_0/sky130_fd_pr__diode_pw2nd_11v0:0 vs. dac_top_cell:1/esd_cell:11/sky130_fd_pr__diode_pw2nd_11v0:8:
+ area circuit1: 1e+13   circuit2: 1e+19   (delta=200%, cutoff=2%)
+ pj circuit1: 2.2e+07   circuit2: 4e+06   (delta=138%, cutoff=2%)
+dac_top_cell_0//esd_structure_5//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:10/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_4//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:9/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_3//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:11/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_2//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:7/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_1//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:6/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
+dac_top_cell_0//esd_structure_0//sky130_fd_pr__diode_pw2nd_05v5_FT76RJ_0/sky130_fd_pr__diode_pw2nd_05v5:0 vs. dac_top_cell:1/esd_cell:8/sky130_fd_pr__diode_pw2nd_05v5:4:
+ area circuit1: 2.025e+11   circuit2: 2.03e+17   (delta=200%, cutoff=2%)
+ pj circuit1: 1.8e+06   circuit2: 4e+06   (delta=75.9%, cutoff=2%)
 
 Subcircuit pins:
 Circuit 1: user_analog_project_wrapper     |Circuit 2: user_analog_project_wrapper     
 -------------------------------------------|-------------------------------------------
-io_clamp_low[2]                            |vssa1 **Mismatch**                         
-io_clamp_low[0]                            |(no matching pin)                          
-io_clamp_low[1]                            |io_clamp_low[2] **Mismatch**               
-io_clamp_high[0]                           |io_clamp_low[0] **Mismatch**               
-vssa1                                      |(no matching pin)                          
-vssa2                                      |vssa2                                      
-io_clamp_high[2]                           |io_clamp_high[2]                           
-io_clamp_high[1]                           |io_clamp_high[1]                           
-vssd2                                      |vssd2                                      
-la_data_out[126]                           |la_data_out[126]                           
-io_oeb[9]                                  |io_oeb[9]                                  
-la_data_out[125]                           |la_data_out[125]                           
-io_oeb[10]                                 |io_oeb[10]                                 
-la_data_out[127]                           |la_data_out[127]                           
-io_oeb[8]                                  |io_oeb[8]                                  
-la_data_out[124]                           |la_data_out[124]                           
-io_oeb[11]                                 |io_oeb[11]                                 
-gpio_analog[2]                             |gpio_analog[2]                             
-gpio_analog[4]                             |gpio_analog[4]                             
-gpio_analog[3]                             |gpio_analog[3]                             
-gpio_analog[15]                            |gpio_analog[15]                            
-gpio_analog[14]                            |gpio_analog[14]                            
-gpio_analog[13]                            |gpio_analog[13]                            
-gpio_analog[12]                            |gpio_analog[12]                            
-gpio_analog[11]                            |gpio_analog[11]                            
-gpio_analog[10]                            |gpio_analog[10]                            
-gpio_analog[9]                             |gpio_analog[9]                             
-gpio_analog[7]                             |gpio_analog[7]                             
-io_in[23]                                  |io_in[23]                                  
-la_data_out[4]                             |la_data_out[1] **Mismatch**                
-la_data_out[3]                             |la_data_out[2] **Mismatch**                
-la_data_out[2]                             |la_data_out[3] **Mismatch**                
-la_data_out[1]                             |la_data_out[4] **Mismatch**                
-la_data_out[0]                             |la_data_out[0]                             
+vssa1                                      |vssa1                                      
 vdda1                                      |vdda1                                      
 gpio_analog[6]                             |gpio_analog[6]                             
 io_in_3v3[11]                              |io_in_3v3[11]                              
@@ -3031,16 +2097,49 @@ io_in_3v3[10]                              |io_in_3v3[10]
 io_in_3v3[9]                               |io_in_3v3[9]                               
 io_in_3v3[8]                               |io_in_3v3[8]                               
 gpio_analog[5]                             |gpio_analog[5]                             
-gpio_analog[8]                             |gpio_analog[8]                             
-la_data_out[5]                             |la_data_out[5]                             
-io_analog[7]                               |io_analog[7]                               
-io_analog[8]                               |io_analog[8]                               
-io_analog[9]                               |io_analog[9]                               
-io_analog[10]                              |io_analog[10]                              
-io_analog[0]                               |io_analog[0]                               
 io_analog[6]                               |io_analog[6]                               
 io_analog[5]                               |io_analog[5]                               
+io_analog[0]                               |io_analog[0]                               
 vccd2                                      |vccd2                                      
+gpio_analog[11]                            |gpio_analog[11]                            
+gpio_analog[12]                            |gpio_analog[12]                            
+gpio_analog[13]                            |gpio_analog[13]                            
+gpio_analog[14]                            |gpio_analog[14]                            
+gpio_analog[15]                            |gpio_analog[15]                            
+gpio_analog[10]                            |gpio_analog[10]                            
+gpio_analog[9]                             |gpio_analog[9]                             
+gpio_analog[8]                             |gpio_analog[8]                             
+gpio_analog[7]                             |gpio_analog[7]                             
+io_analog[10]                              |io_analog[10]                              
+io_analog[9]                               |io_analog[9]                               
+io_analog[8]                               |io_analog[8]                               
+io_analog[7]                               |io_analog[7]                               
+la_data_out[5]                             |la_data_out[5]                             
+io_in[23]                                  |io_in[23]                                  
+la_data_out[4]                             |la_data_out[4]                             
+la_data_out[3]                             |la_data_out[3]                             
+la_data_out[2]                             |la_data_out[2]                             
+la_data_out[1]                             |la_data_out[1]                             
+la_data_out[0]                             |la_data_out[0]                             
+gpio_analog[3]                             |gpio_analog[3]                             
+gpio_analog[4]                             |gpio_analog[4]                             
+gpio_analog[2]                             |gpio_analog[2]                             
+vssd2                                      |vssd2                                      
+io_clamp_high[1]                           |io_clamp_high[1]                           
+io_clamp_high[2]                           |io_clamp_high[2]                           
+io_oeb[9]                                  |io_oeb[9]                                  
+la_data_out[126]                           |la_data_out[126]                           
+io_oeb[10]                                 |io_oeb[10]                                 
+la_data_out[125]                           |la_data_out[125]                           
+io_oeb[8]                                  |io_oeb[8]                                  
+la_data_out[127]                           |la_data_out[127]                           
+io_oeb[11]                                 |io_oeb[11]                                 
+la_data_out[124]                           |la_data_out[124]                           
+io_clamp_high[0]                           |io_clamp_high[0]                           
+io_clamp_low[1]                            |io_clamp_low[1]                            
+io_clamp_low[0]                            |io_clamp_low[0]                            
+io_clamp_low[2]                            |io_clamp_low[2]                            
+vssa2                                      |vssa2                                      
 gpio_analog[0]                             |gpio_analog[0]                             
 gpio_analog[16]                            |gpio_analog[16]                            
 gpio_analog[17]                            |gpio_analog[17]                            
@@ -3653,12 +2752,12 @@ wbs_sel_i[2]                               |wbs_sel_i[2]
 wbs_sel_i[3]                               |wbs_sel_i[3]                               
 wbs_stb_i                                  |wbs_stb_i                                  
 wbs_we_i                                   |wbs_we_i                                   
-(no matching pin)                          |io_clamp_high[0]                           
-(no matching pin)                          |io_clamp_low[1]                            
-io_clamp_low[0]                            |(no matching pin)                          
-vssa1                                      |(no matching pin)                          
 ---------------------------------------------------------------------------------------
-Cell pin lists for user_analog_project_wrapper and user_analog_project_wrapper altered to match.
+Cell pin lists are equivalent.
 Device classes user_analog_project_wrapper and user_analog_project_wrapper are equivalent.
 
-Final result: Top level cell failed pin matching.
+Final result: Circuits match uniquely.
+Property errors were found.
+
+The following cells had property errors:
+ user_analog_project_wrapper
