@@ -2308,23 +2308,37 @@ XMulColROs_0 vccd2 io_analog[10] io_analog[9] io_analog[8] io_analog[7] la_data_
 + la_data_out[1] la_data_out[2] la_data_out[3] la_data_out[4] io_in[23] la_data_out[5]
 + gpio_analog[7] gpio_analog[8] gpio_analog[9] gpio_analog[10] gpio_analog[11] gpio_analog[12]
 + gpio_analog[13] gpio_analog[14] gpio_analog[15] MulColROs_0/VSS MulColROs
-Xdac_top_cell_0 io_in_3v3[8] io_in_3v3[9] io_in_3v3[10] io_in_3v3[11] gpio_analog[5]
+Xdac_top_cell_0 io_in_3v3[5] io_in_3v3[6] io_in_3v3[7] io_in_3v3[8] gpio_analog[5]
 + vdda1 io_analog[0] gpio_analog[6] dac_top_cell_0/vgnd dac_top_cell_0/vgnd dac_top_cell_0/vgnd
 + dac_top_cell
 Xulqc_ldo_0 io_analog[6] gpio_analog[3] gpio_analog[4] gpio_analog[2] io_analog[5]
 + ulqc_ldo_0/VSS ulqc_ldo
-R0 la_data_out[124] io_oeb[11] sky130_fd_pr__res_generic_m2 w=3 l=5
-R1 dac_top_cell_0/vgnd vssa1 sky130_fd_pr__res_generic_m4 w=21 l=10
-R2 la_data_out[127] io_oeb[8] sky130_fd_pr__res_generic_m2 w=3 l=5
-R3 vssd2 MulColROs_0/VSS sky130_fd_pr__res_generic_m4 w=30 l=80.6
-R4 io_analog[6] io_clamp_high[2] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R5 la_data_out[125] io_oeb[10] sky130_fd_pr__res_generic_m2 w=3 l=5
-R6 vssa1 io_clamp_low[2] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R7 vssa1 io_clamp_low[0] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R8 io_analog[5] io_clamp_high[1] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R9 vssa1 io_clamp_low[1] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R10 la_data_out[126] io_oeb[9] sky130_fd_pr__res_generic_m2 w=3 l=5
-R11 vssa1 io_clamp_high[0] sky130_fd_pr__res_generic_m3 w=11 l=5.5
-R12 vssa2 ulqc_ldo_0/VSS sky130_fd_pr__res_generic_m5 w=40 l=20
+R0 io_oeb[18] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R1 la_data_out[124] io_oeb[8] sky130_fd_pr__res_generic_m2 w=3 l=5
+R2 io_oeb[15] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R3 dac_top_cell_0/vgnd vssa1 sky130_fd_pr__res_generic_m4 w=21 l=10
+R4 la_data_out[127] io_oeb[5] sky130_fd_pr__res_generic_m2 w=3 l=5
+R5 io_oeb[16] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R6 vccd1 io_oeb[10] sky130_fd_pr__res_generic_m3 w=2.99 l=10
+R7 io_oeb[21] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R8 vccd1 io_oeb[12] sky130_fd_pr__res_generic_m3 w=2.99 l=10
+R9 vssd2 MulColROs_0/VSS sky130_fd_pr__res_generic_m4 w=30 l=80.6
+R10 io_oeb[19] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R11 io_analog[6] io_clamp_high[2] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R12 vccd1 io_oeb[13] sky130_fd_pr__res_generic_m3 w=2.99 l=10
+R13 io_oeb[22] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R14 la_data_out[125] io_oeb[7] sky130_fd_pr__res_generic_m2 w=3 l=5
+R15 io_oeb[17] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R16 vccd1 io_oeb[9] sky130_fd_pr__res_generic_m3 w=2.99 l=10
+R17 vssa1 io_clamp_low[2] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R18 vssa1 io_clamp_low[0] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R19 io_analog[5] io_clamp_high[1] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R20 vssa1 io_clamp_low[1] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R21 vccd1 io_oeb[11] sky130_fd_pr__res_generic_m3 w=2.99 l=10
+R22 io_oeb[14] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R23 la_data_out[126] io_oeb[6] sky130_fd_pr__res_generic_m2 w=3 l=5
+R24 vssa1 io_clamp_high[0] sky130_fd_pr__res_generic_m3 w=11 l=5.5
+R25 io_oeb[20] vccd2 sky130_fd_pr__res_generic_m3 w=5 l=10
+R26 vssa2 ulqc_ldo_0/VSS sky130_fd_pr__res_generic_m5 w=40 l=20
 .ends
 
