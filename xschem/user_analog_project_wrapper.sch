@@ -6,7 +6,7 @@ V {}
 S {}
 E {}
 N 4440 -490 4440 -450 {
-lab=VSUBS}
+lab=mulcolros_vss}
 N 4440 -830 4440 -790 {
 lab=vccd2}
 N 4220 -760 4290 -760 {
@@ -64,9 +64,9 @@ lab=io_oeb[11]}
 N 3960 200 4020 200 {
 lab=io_oeb[11]}
 N 3960 240 3960 280 {
-lab=#net1}
+lab=dac_top_cell_vgnd}
 N 3960 240 4020 240 {
-lab=#net1}
+lab=dac_top_cell_vgnd}
 N 3960 340 3960 380 {
 lab=vssa1}
 N 3960 380 4020 380 {
@@ -80,9 +80,9 @@ lab=io_oeb[8]}
 N 4140 200 4200 200 {
 lab=io_oeb[8]}
 N 4140 240 4140 280 {
-lab=VSUBS}
+lab=#net1}
 N 4140 240 4200 240 {
-lab=VSUBS}
+lab=#net1}
 N 4140 340 4140 380 {
 lab=vssd2}
 N 4140 380 4200 380 {
@@ -108,9 +108,9 @@ lab=io_clamp_low[2]}
 N 4500 60 4560 60 {
 lab=io_clamp_low[2]}
 N 4500 160 4500 200 {
-lab=#net2}
+lab=vssa1}
 N 4500 200 4560 200 {
-lab=#net2}
+lab=vssa1}
 N 4500 240 4500 280 {
 lab=io_clamp_low[0]}
 N 4500 240 4560 240 {
@@ -152,9 +152,9 @@ lab=vssa1}
 N 4840 380 4900 380 {
 lab=vssa1}
 N 5020 60 5020 100 {
-lab=VSUBS}
+lab=ulqc_ldo_vss}
 N 5020 60 5080 60 {
-lab=VSUBS}
+lab=ulqc_ldo_vss}
 N 5020 160 5020 200 {
 lab=vssa2}
 N 5020 200 5080 200 {
@@ -166,11 +166,11 @@ lab=gpio_analog[3]}
 N 4040 -20 4100 -20 {
 lab=gpio_analog[4]}
 N 4400 -60 4470 -60 {
-lab=VSUBS}
+lab=ulqc_ldo_vss}
 N 4400 -40 4470 -40 {
 lab=gpio_analog[2]}
 N 4400 -20 4470 -20 {
-lab=#net3}
+lab=io_analog[5]}
 C {devices/iopin.sym} 3660 -760 0 0 {name=p1 lab=vdda1}
 C {devices/iopin.sym} 3660 -730 0 0 {name=p2 lab=vdda2}
 C {devices/iopin.sym} 3660 -700 0 0 {name=p3 lab=vssa1}
@@ -220,7 +220,6 @@ C {devices/lab_pin.sym} 4220 -700 0 0 {name=l45 sig_type=std_logic lab=gpio_anal
 C {devices/lab_pin.sym} 4220 -680 0 0 {name=l46 sig_type=std_logic lab=gpio_analog[8]}
 C {devices/lab_pin.sym} 4220 -660 0 0 {name=l47 sig_type=std_logic lab=gpio_analog[7]}
 C {devices/lab_pin.sym} 4640 -720 0 1 {name=l48 sig_type=std_logic lab=io_analog[10:7]}
-C {top_cell_esd/tb/dac_top_cell.sym} 4250 -260 0 0 {name=x1}
 C {devices/lab_pin.sym} 4470 -340 2 0 {name=l1 sig_type=std_logic lab=io_in_3v3[8]}
 C {devices/lab_pin.sym} 4470 -320 2 0 {name=l2 sig_type=std_logic lab=io_in_3v3[9]}
 C {devices/lab_pin.sym} 4470 -300 2 0 {name=l3 sig_type=std_logic lab=io_in_3v3[10]}
@@ -296,19 +295,17 @@ W=40
 L=20
 model=res_generic_m5
 mult=1}
-C {devices/lab_pin.sym} 4200 240 0 1 {name=l10 sig_type=std_logic lab=VSUBS}
-C {devices/lab_pin.sym} 5080 60 0 1 {name=l11 sig_type=std_logic lab=VSUBS}
 C {devices/lab_pin.sym} 3990 60 2 0 {name=l12 sig_type=std_logic lab=la_data_out[124]}
 C {devices/lab_pin.sym} 4350 240 2 0 {name=l13 sig_type=std_logic lab=la_data_out[125]}
 C {devices/lab_pin.sym} 4870 60 2 0 {name=l14 sig_type=std_logic lab=la_data_out[126]}
 C {devices/lab_pin.sym} 4160 60 2 0 {name=l15 sig_type=std_logic lab=la_data_out[127]}
-C {devices/lab_pin.sym} 4470 -60 0 1 {name=l16 sig_type=std_logic lab=VSUBS}
-C {devices/lab_pin.sym} 4440 -450 0 1 {name=l17 sig_type=std_logic lab=VSUBS}
+C {devices/lab_pin.sym} 4470 -60 0 1 {name=l16 sig_type=std_logic lab=ulqc_ldo_vss}
+C {devices/lab_pin.sym} 4440 -450 0 1 {name=l17 sig_type=std_logic lab=mulcolros_vss}
 C {devices/lab_pin.sym} 4020 200 2 0 {name=l18 sig_type=std_logic lab=io_oeb[11]}
 C {devices/lab_pin.sym} 4200 200 2 0 {name=l19 sig_type=std_logic lab=io_oeb[8]}
 C {devices/lab_pin.sym} 4900 200 2 0 {name=l20 sig_type=std_logic lab=io_oeb[9]}
 C {devices/lab_pin.sym} 4380 380 2 0 {name=l21 sig_type=std_logic lab=io_oeb[10]}
-C {devices/lab_pin.sym} 4470 -180 0 1 {name=l22 sig_type=std_logic lab=dac_top_cell_vgnd}
+C {devices/lab_pin.sym} 3980 240 0 1 {name=l22 sig_type=std_logic lab=dac_top_cell_vgnd}
 C {devices/lab_pin.sym} 4720 380 0 1 {name=l23 sig_type=std_logic lab=vssa1}
 C {devices/lab_pin.sym} 4690 200 2 0 {name=l24 sig_type=std_logic lab=io_clamp_high[1]}
 C {devices/lab_pin.sym} 4340 60 0 1 {name=l25 sig_type=std_logic lab=io_analog[6]}
@@ -326,3 +323,8 @@ C {devices/lab_pin.sym} 4040 -40 0 0 {name=l52 sig_type=std_logic lab=gpio_analo
 C {devices/lab_pin.sym} 4040 -20 0 0 {name=l53 sig_type=std_logic lab=gpio_analog[4]}
 C {devices/lab_pin.sym} 4470 -40 2 0 {name=l54 sig_type=std_logic lab=gpio_analog[2]}
 C {devices/lab_pin.sym} 4470 -20 0 1 {name=l55 sig_type=std_logic lab=io_analog[5]}
+C {devices/lab_pin.sym} 4560 200 0 1 {name=l57 sig_type=std_logic lab=vssa1}
+C {devices/lab_pin.sym} 4470 -180 0 1 {name=l56 sig_type=std_logic lab=dac_top_cell_vgnd}
+C {dac_top_cell.sym} 4250 -260 0 0 {name=x1}
+C {devices/lab_pin.sym} 5080 60 0 1 {name=l11 sig_type=std_logic lab=ulqc_ldo_vss}
+C {devices/lab_pin.sym} 4200 240 0 1 {name=l10 sig_type=std_logic lab=mulcolros_vss}
