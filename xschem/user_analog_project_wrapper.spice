@@ -94,26 +94,17 @@ x3 vccd2 mulcolros_vss gpio_analog[11] gpio_analog[12] gpio_analog[13] gpio_anal
 + io_analog[8] io_analog[7] la_data_out[5] io_in[23] la_data_out[4] la_data_out[3] la_data_out[2] la_data_out[1]
 + la_data_out[0] MulColROs
 x2 io_analog[6] ulqc_ldo_vss gpio_analog[3] gpio_analog[4] gpio_analog[2] io_analog[5] ulqc_ldo
-R0 io_oeb[8] la_data_out[124] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
-R1 vssa1 dac_top_cell_vgnd sky130_fd_pr__res_generic_m4 W=21 L=10 m=1
-R2 io_oeb[5] la_data_out[127] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R3 vssd2 mulcolros_vss sky130_fd_pr__res_generic_m4 W=30 L=80.6 m=1
 R4 io_clamp_high[2] io_analog[6] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
-R5 io_oeb[7] la_data_out[125] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R6 vssa1 io_clamp_low[2] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R7 vssa1 io_clamp_low[0] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R8 io_clamp_high[1] io_analog[5] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R9 vssa1 io_clamp_low[1] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
-R10 io_oeb[6] la_data_out[126] sky130_fd_pr__res_generic_m2 W=3 L=5 m=1
 R11 vssa1 io_clamp_high[0] sky130_fd_pr__res_generic_m3 W=11 L=5.5 m=1
 R12 vssa2 ulqc_ldo_vss sky130_fd_pr__res_generic_m5 W=40 L=20 m=1
-x1 io_in_3v3[5] io_in_3v3[6] io_in_3v3[7] io_analog[0] io_in_3v3[8] gpio_analog[6] gpio_analog[5]
-+ vdda1 dac_top_cell_vgnd dac_top_cell
 R13 io_oeb[9] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
 R14 io_oeb[10] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
 R15 io_oeb[11] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
-R16 io_oeb[12] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
-R17 io_oeb[13] vccd1 sky130_fd_pr__res_generic_m3 W=2.99 L=10 m=1
 R18 io_oeb[14] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 R19 io_oeb[15] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 R20 io_oeb[16] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
@@ -123,6 +114,7 @@ R23 io_oeb[19] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 R24 io_oeb[20] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 R25 io_oeb[21] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 R26 io_oeb[22] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
+R10 io_oeb[23] vccd2 sky130_fd_pr__res_generic_m3 W=5 L=10 m=1
 .ends
 
 * expanding   symbol:  MulColROs.sym # of pins=16
@@ -148,41 +140,8 @@ xMulColROs[0] VDD VSS AIn0 AOut[0] AIn[0] AIn2 AIn3 AIn4 AIn5 REG0 REG1 REG2 REG
 ** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/ulqc_ldo.sch
 .subckt ulqc_ldo VIN VSS ADJ BGR_IN EA_OUT OUT
 *.PININFO VIN:I VSS:B ADJ:I BGR_IN:I EA_OUT:O OUT:O
-x1 ADJ BGR_IN VSS VIN EA_OUT net1 opamp#0
 x2 VIN EA_OUT net1 OUT power_transistor
-.ends
-
-
-* expanding   symbol:  dac_top_cell.sym # of pins=9
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/dac_top_cell.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/dac_top_cell.sch
-.subckt dac_top_cell in1 in2 in3 out in4 vbias18 vbias07 vsup vgnd
-*.PININFO in1:B in2:B in3:B in4:B vbias07:B vgnd:B vsup:B out:B vbias18:B
-x2 vsup in_iref vgnd net2 vbias_v net5 vgnd dac_cell2
-x3 vsup vgnd in_iref net3 vbias_v net5 vgnd dac_cell3
-x4 vsup in_iref vgnd net4 vbias_v net5 vgnd dac_cell4
-x5 vsup out op_amp_in net9 vgnd miel21_opamp
-x1 vsup in_iref vgnd net1 vbias_v net5 vgnd dac_cell1
-XR1 net6 net5 vgnd sky130_fd_pr__res_xhigh_po_2p85 L=1.25 mult=1 m=1
-XR2 op_amp_in net6 vgnd sky130_fd_pr__res_xhigh_po_2p85 L=1.25 mult=1 m=1
-XR4 net6 net5 vgnd sky130_fd_pr__res_xhigh_po_2p85 L=1.25 mult=1 m=1
-XR3 op_amp_in net6 vgnd sky130_fd_pr__res_xhigh_po_2p85 L=1.25 mult=1 m=1
-XR5 net7 op_amp_in vgnd sky130_fd_pr__res_xhigh_po_0p35 L=4.2 mult=1 m=1
-XR6 out net7 vgnd sky130_fd_pr__res_xhigh_po_0p35 L=4.2 mult=1 m=1
-XR7 net7 op_amp_in vgnd sky130_fd_pr__res_xhigh_po_0p35 L=4.2 mult=1 m=1
-XR8 out net7 vgnd sky130_fd_pr__res_xhigh_po_0p35 L=4.2 mult=1 m=1
-XR9 net8 in_iref vgnd sky130_fd_pr__res_high_po_5p73 L=1.25 mult=1 m=1
-XR10 net8 in_iref vgnd sky130_fd_pr__res_high_po_5p73 L=1.25 mult=1 m=1
-XR11 vgnd net8 vgnd sky130_fd_pr__res_high_po_5p73 L=1.25 mult=1 m=1
-XR12 vgnd net8 vgnd sky130_fd_pr__res_high_po_5p73 L=1.25 mult=1 m=1
-x6 vsup in1 net1 vgnd esd_cell
-x7 vsup in2 net2 vgnd esd_cell
-x8 vsup in3 net3 vgnd esd_cell
-x9 vsup in4 net4 vgnd esd_cell
-x10 vsup vbias07 vbias_v vgnd esd_cell
-x11 vsup vbias18 net9 vgnd esd_cell
+x1 ADJ BGR_IN VSS VIN EA_OUT net1 error_amplifier
 .ends
 
 
@@ -199,10 +158,20 @@ x3 REG6 net2 net3 net1 VDD VSS mux2_1
 .ends
 
 
-* expanding   symbol:  opamp#0.sym # of pins=6
-** sym_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/opamp#0.sym
-** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/opamp#0.sch
-.subckt opamp#0 POS NEG VSS VDD EA_OUT BIAS_CUR
+* expanding   symbol:  power_transistor.sym # of pins=4
+** sym_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/power_transistor.sym
+** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/power_transistor.sch
+.subckt power_transistor VDD EA_OUT BIAS_CURR OUT
+*.PININFO VDD:I EA_OUT:I OUT:O BIAS_CURR:O
+XM1 BIAS_CURR EA_OUT VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=2
+XM2 OUT EA_OUT VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=5398
+.ends
+
+
+* expanding   symbol:  error_amplifier.sym # of pins=6
+** sym_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/error_amplifier.sym
+** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/error_amplifier.sch
+.subckt error_amplifier POS NEG VSS VDD EA_OUT BIAS_CUR
 *.PININFO POS:I NEG:I VDD:B VSS:B BIAS_CUR:I EA_OUT:O
 XM3 POS_D POS_D VDD VDD sky130_fd_pr__pfet_01v8 L=0.3 W=5 nf=1 m=6
 XM4 NEG_D NEG_D VDD VDD sky130_fd_pr__pfet_01v8 L=0.3 W=5 nf=1 m=6
@@ -219,133 +188,6 @@ XM6 P1 VSS VSS VSS sky130_fd_pr__nfet_01v8 L=1 W=5 nf=1 m=2
 XM8 NEG_D P1 P1 VSS sky130_fd_pr__nfet_01v8 L=0.5 W=8 nf=1 m=2
 XM14 NEG_D VDD VDD VDD sky130_fd_pr__pfet_01v8 L=0.3 W=5 nf=1 m=2
 XM15 POS_D VDD VDD VDD sky130_fd_pr__pfet_01v8 L=0.3 W=5 nf=1 m=2
-.ends
-
-
-* expanding   symbol:  power_transistor.sym # of pins=4
-** sym_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/power_transistor.sym
-** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/ULQC_LDO/xschem/power_transistor.sch
-.subckt power_transistor VDD EA_OUT BIAS_CURR OUT
-*.PININFO VDD:I EA_OUT:I OUT:O BIAS_CURR:O
-XM1 BIAS_CURR EA_OUT VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=2
-XM2 OUT EA_OUT VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=5398
-.ends
-
-
-* expanding   symbol:  ../../dac_cell2/tb/dac_cell2.sym # of pins=7
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell2/tb/dac_cell2.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell2/tb/dac_cell2.sch
-.subckt dac_cell2 vsup iref vgnd vsw vbias iout_n iout
-*.PININFO vsup:B vgnd:B iref:B vsw:B iout:B iout_n:B vbias:B
-XM1 iref iref vsup vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM2 sourceM3M4 iref sourceM2 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
-XM3 iout vsw sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
-XM4 iout_n vbias sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=1
-XR1 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=27 mult=1 m=1
-XR2 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=27 mult=1 m=1
-XR3 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=27 mult=1 m=1
-XR4 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=27 mult=1 m=1
-.ends
-
-
-* expanding   symbol:  ../../dac_cell3/tb/dac_cell3.sym # of pins=7
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell3/tb/dac_cell3.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell3/tb/dac_cell3.sch
-.subckt dac_cell3 vsup vgnd iref vsw vbias iout_n iout
-*.PININFO vsup:B vgnd:B iref:B vsw:B iout:B iout_n:B vbias:B
-XM1 iref iref vsup vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM2 sourceM3M4 iref sourceM2 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=1
-XM3 iout vsw sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=1
-XM4 iout_n vbias sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=1
-XR1 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=13 mult=1 m=1
-XR2 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=13 mult=1 m=1
-XR3 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=13 mult=1 m=1
-XR4 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=13 mult=1 m=1
-.ends
-
-
-* expanding   symbol:  ../../dac_cell4/tb/dac_cell4.sym # of pins=7
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell4/tb/dac_cell4.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell4/tb/dac_cell4.sch
-.subckt dac_cell4 vsup iref vgnd vsw vbias iout_n iout
-*.PININFO vsup:B vgnd:B iref:B vsw:B iout:B iout_n:B vbias:B
-XM1 iref iref vsup vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM2 sourceM3M4 iref sourceM2 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=8 nf=1 m=1
-XM3 iout vsw sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=8 nf=1 m=1
-XM4 iout_n vbias sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=8 nf=1 m=1
-XR1 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=6.3 mult=1 m=1
-XR2 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=6.3 mult=1 m=1
-XR3 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=6.3 mult=1 m=1
-XR4 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=6.3 mult=1 m=1
-.ends
-
-
-* expanding   symbol:  ../../opamp/miel21_opamp.sym # of pins=5
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../opamp/miel21_opamp.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../opamp/miel21_opamp.sch
-.subckt miel21_opamp power outSingle inPos inNeg ground
-*.PININFO inPos:I inNeg:I outSingle:O power:B ground:B
-XM6 d1 d1 power power sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=21 nf=3 m=1
-XM7 d2 d1 power power sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=21 nf=3 m=1
-XM8 outSingle d2 power power sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=260 nf=20 m=1
-XM1 d1 inPos nsources ground sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 m=1
-XM2 d2 inNeg nsources ground sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=5 nf=1 m=1
-XM3 bias bias ground ground sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=2 m=1
-XM4 nsources bias ground ground sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=10 nf=2 m=1
-XM5 outSingle bias ground ground sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=48 nf=8 m=1
-XR1 bias net2 ground sky130_fd_pr__res_xhigh_po_0p69 L=6 mult=1 m=1
-XC1 outSingle d2 sky130_fd_pr__cap_mim_m3_1 W=10 L=14 MF=1 m=1
-XR2 net2 net1 ground sky130_fd_pr__res_xhigh_po_0p69 L=6 mult=1 m=1
-XR3 net1 power ground sky130_fd_pr__res_xhigh_po_0p69 L=6 mult=1 m=1
-.ends
-
-
-* expanding   symbol:  ../../dac_cell1/tb/dac_cell1.sym # of pins=7
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell1/tb/dac_cell1.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../dac_cell1/tb/dac_cell1.sch
-.subckt dac_cell1 vsup iref vgnd vsw vbias iout_n iout
-*.PININFO vsup:B vgnd:B iref:B vsw:B iout:B iout_n:B vbias:B
-XM1 iref iref vsup vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM2 sourceM3M4 iref sourceM2 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM3 iout vsw sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XM4 iout_n vbias sourceM3M4 vsup sky130_fd_pr__pfet_g5v0d10v5 L=1 W=1 nf=1 m=1
-XR1 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=58 mult=1 m=1
-XR2 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=58 mult=1 m=1
-XR3 parR vsup vgnd sky130_fd_pr__res_xhigh_po_0p69 L=58 mult=1 m=1
-XR4 sourceM2 parR vgnd sky130_fd_pr__res_xhigh_po_0p69 L=58 mult=1 m=1
-.ends
-
-
-* expanding   symbol:  ../../esd_cell/tb/esd_cell.sym # of pins=4
-** sym_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../esd_cell/tb/esd_cell.sym
-** sch_path:
-*+ /home/manhtd_61d/git/unic-cass-ic4/user_prj/UNIC-CASS_precheck_dac/dev/top_cell_esd/tb/../../esd_cell/tb/esd_cell.sch
-.subckt esd_cell vsup pad gate vgnd
-*.PININFO vsup:B pad:B vgnd:B gate:B
-D1 pad vsup sky130_fd_pr__diode_pd2nw_11v0 area=10e+18 pj=4e6
-D3 gate vsup sky130_fd_pr__diode_pd2nw_05v5 area=0.203e+18 pj=4e6
-D4 vgnd gate sky130_fd_pr__diode_pw2nd_05v5 area=0.203e+18 pj=4e6
-XR1 gate pad vgnd sky130_fd_pr__res_high_po W=0.35 L=10 mult=1 m=1
-D8 vgnd pad sky130_fd_pr__diode_pw2nd_11v0 area=10e+18 pj=4e6
-D2 pad vsup sky130_fd_pr__diode_pd2nw_11v0 area=10e+18 pj=4e6
-D5 pad vsup sky130_fd_pr__diode_pd2nw_11v0 area=10e+18 pj=4e6
-D6 pad vsup sky130_fd_pr__diode_pd2nw_11v0 area=10e+18 pj=4e6
-D7 pad vsup sky130_fd_pr__diode_pd2nw_11v0 area=10e+18 pj=4e6
-D9 vgnd pad sky130_fd_pr__diode_pw2nd_11v0 area=10e+18 pj=4e6
-D10 vgnd pad sky130_fd_pr__diode_pw2nd_11v0 area=10e+18 pj=4e6
-D11 vgnd pad sky130_fd_pr__diode_pw2nd_11v0 area=10e+18 pj=4e6
-D12 vgnd pad sky130_fd_pr__diode_pw2nd_11v0 area=10e+18 pj=4e6
 .ends
 
 
@@ -433,8 +275,8 @@ XM10 net1 Vtune VDD VDD sky130_fd_pr__pfet_01v8_lvt L=10 W=10 nf=1 m=1
 ** sch_path: /home/manhtd_61d/git/unic-cass-ic4/user_prj/MulColRO/xschem/opamp/opamp.sch
 .subckt opamp opbias inp inn out VSS VDD
 *.PININFO inp:I inn:I opbias:I out:O VDD:B VSS:B
-XC1 net5 out sky130_fd_pr__cap_mim_m3_1 W=2 L=4 MF=1 m=1
-XC2 out net4 sky130_fd_pr__cap_mim_m3_1 W=2 L=4 MF=1 m=1
+XC1 net5 out sky130_fd_pr__cap_mim_m3_1 W=4 L=2 MF=1 m=1
+XC2 out net4 sky130_fd_pr__cap_mim_m3_1 W=4 L=2 MF=1 m=1
 XM26 net2 opbias VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=4 m=1
 XM3 net1 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=2 m=1
 XM4 net5 net1 VDD VDD sky130_fd_pr__pfet_01v8_lvt L=3 W=10 nf=2 m=1
