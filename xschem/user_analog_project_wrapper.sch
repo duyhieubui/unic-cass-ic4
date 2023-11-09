@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.1 file_version=1.2
 }
 G {}
 K {}
@@ -56,9 +56,9 @@ lab=vdda1}
 N 4400 -180 4470 -180 {
 lab=dac_top_cell_vgnd}
 N 3960 60 3960 100 {
-lab=la_data_out[124]}
+lab=vccd1}
 N 3960 60 4020 60 {
-lab=la_data_out[124]}
+lab=vccd1}
 N 3960 160 3960 200 {
 lab=io_oeb[8]}
 N 3960 200 4020 200 {
@@ -72,9 +72,9 @@ lab=vssa1}
 N 3960 380 4020 380 {
 lab=vssa1}
 N 4140 60 4140 100 {
-lab=la_data_out[127]}
+lab=vccd1}
 N 4140 60 4200 60 {
-lab=la_data_out[127]}
+lab=vccd1}
 N 4140 160 4140 200 {
 lab=io_oeb[5]}
 N 4140 200 4200 200 {
@@ -96,9 +96,9 @@ lab=io_clamp_high[2]}
 N 4320 200 4380 200 {
 lab=io_clamp_high[2]}
 N 4320 240 4320 280 {
-lab=la_data_out[125]}
+lab=vccd1}
 N 4320 240 4380 240 {
-lab=la_data_out[125]}
+lab=vccd1}
 N 4320 340 4320 380 {
 lab=io_oeb[7]}
 N 4320 380 4380 380 {
@@ -136,9 +136,9 @@ lab=vssa1}
 N 4660 380 4720 380 {
 lab=vssa1}
 N 4840 60 4840 100 {
-lab=la_data_out[126]}
+lab=vccd1}
 N 4840 60 4900 60 {
-lab=la_data_out[126]}
+lab=vccd1}
 N 4840 160 4840 200 {
 lab=io_oeb[6]}
 N 4840 200 4900 200 {
@@ -283,6 +283,14 @@ N 4670 900 4670 940 {
 lab=io_oeb[22]}
 N 4670 940 4730 940 {
 lab=io_oeb[22]}
+N 4670 620 4670 660 {
+lab=vccd2}
+N 4670 620 4730 620 {
+lab=vccd2}
+N 4670 720 4670 760 {
+lab=io_oeb[22]}
+N 4670 760 4730 760 {
+lab=io_oeb[22]}
 C {devices/iopin.sym} 3660 -760 0 0 {name=p1 lab=vdda1}
 C {devices/iopin.sym} 3660 -730 0 0 {name=p2 lab=vdda2}
 C {devices/iopin.sym} 3660 -700 0 0 {name=p3 lab=vssa1}
@@ -342,20 +350,10 @@ C {devices/lab_pin.sym} 4470 -200 0 1 {name=l7 sig_type=std_logic lab=vdda1}
 C {devices/lab_pin.sym} 4470 -240 2 0 {name=l8 sig_type=std_logic lab=gpio_analog[6]}
 C {devices/lab_pin.sym} 4470 -220 2 0 {name=l9 sig_type=std_logic lab=gpio_analog[5]}
 C {ulqc_ldo.sym} 4250 -40 0 0 {name=x2}
-C {sky130_fd_pr/res_generic_m2.sym} 3960 130 0 0 {name=R0
-W=3
-L=5
-model=res_generic_m2
-mult=1}
 C {sky130_fd_pr/res_generic_m4.sym} 3960 310 0 0 {name=R1
 W=21
 L=10
 model=res_generic_m4
-mult=1}
-C {sky130_fd_pr/res_generic_m2.sym} 4140 130 0 0 {name=R2
-W=3
-L=5
-model=res_generic_m2
 mult=1}
 C {sky130_fd_pr/res_generic_m4.sym} 4140 310 0 0 {name=R3
 W=30
@@ -366,11 +364,6 @@ C {sky130_fd_pr/res_generic_m3.sym} 4320 130 0 0 {name=R4
 W=11
 L=5.5
 model=res_generic_m3
-mult=1}
-C {sky130_fd_pr/res_generic_m2.sym} 4320 310 0 0 {name=R5
-W=3
-L=5
-model=res_generic_m2
 mult=1}
 C {sky130_fd_pr/res_generic_m3.sym} 4500 130 0 0 {name=R6
 W=11
@@ -392,11 +385,6 @@ W=11
 L=5.5
 model=res_generic_m3
 mult=1}
-C {sky130_fd_pr/res_generic_m2.sym} 4840 130 0 0 {name=R10
-W=3
-L=5
-model=res_generic_m2
-mult=1}
 C {sky130_fd_pr/res_generic_m3.sym} 4840 310 0 0 {name=R11
 W=11
 L=5.5
@@ -407,10 +395,6 @@ W=40
 L=20
 model=res_generic_m5
 mult=1}
-C {devices/lab_pin.sym} 3990 60 2 0 {name=l12 sig_type=std_logic lab=la_data_out[124]}
-C {devices/lab_pin.sym} 4350 240 2 0 {name=l13 sig_type=std_logic lab=la_data_out[125]}
-C {devices/lab_pin.sym} 4870 60 2 0 {name=l14 sig_type=std_logic lab=la_data_out[126]}
-C {devices/lab_pin.sym} 4160 60 2 0 {name=l15 sig_type=std_logic lab=la_data_out[127]}
 C {devices/lab_pin.sym} 4470 -60 0 1 {name=l16 sig_type=std_logic lab=ulqc_ldo_vss}
 C {devices/lab_pin.sym} 4440 -450 0 1 {name=l17 sig_type=std_logic lab=mulcolros_vss}
 C {devices/lab_pin.sym} 4020 200 2 0 {name=l18 sig_type=std_logic lab=io_oeb[8]}
@@ -538,3 +522,34 @@ model=res_generic_m3
 mult=1}
 C {devices/lab_pin.sym} 4730 940 2 0 {name=l84 sig_type=std_logic lab=io_oeb[22]}
 C {devices/lab_pin.sym} 4730 800 0 1 {name=l85 sig_type=std_logic lab=vccd2}
+C {devices/lab_pin.sym} 4380 240 0 1 {name=l86 sig_type=std_logic lab=vccd1}
+C {devices/lab_pin.sym} 4200 60 0 1 {name=l12 sig_type=std_logic lab=vccd1}
+C {devices/lab_pin.sym} 4020 60 0 1 {name=l13 sig_type=std_logic lab=vccd1}
+C {devices/lab_pin.sym} 4900 60 0 1 {name=l14 sig_type=std_logic lab=vccd1}
+C {sky130_fd_pr/res_generic_m3.sym} 3960 130 0 0 {name=R27
+W=2.99
+L=10
+model=res_generic_m3
+mult=1}
+C {sky130_fd_pr/res_generic_m3.sym} 4140 130 0 0 {name=R2
+W=2.99
+L=10
+model=res_generic_m3
+mult=1}
+C {sky130_fd_pr/res_generic_m3.sym} 4320 310 0 0 {name=R5
+W=2.99
+L=10
+model=res_generic_m3
+mult=1}
+C {sky130_fd_pr/res_generic_m3.sym} 4840 130 0 0 {name=R28
+W=11
+L=5.5
+model=res_generic_m3
+mult=1}
+C {sky130_fd_pr/res_generic_m3.sym} 4670 690 0 0 {name=R10
+W=5
+L=10
+model=res_generic_m3
+mult=1}
+C {devices/lab_pin.sym} 4730 760 2 0 {name=l15 sig_type=std_logic lab=io_oeb[23]}
+C {devices/lab_pin.sym} 4730 620 0 1 {name=l87 sig_type=std_logic lab=vccd2}
