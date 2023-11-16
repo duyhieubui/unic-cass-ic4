@@ -26,15 +26,15 @@ lab=la_data_out[5]}
 N 4220 -620 4290 -620 {
 lab=io_in[23]}
 N 4220 -600 4290 -600 {
-lab=la_data_out[4]}
+lab=la_data_in[4]}
 N 4220 -580 4290 -580 {
-lab=la_data_out[3]}
+lab=la_data_in[3]}
 N 4220 -560 4290 -560 {
-lab=la_data_out[2]}
+lab=la_data_in[2]}
 N 4220 -540 4290 -540 {
-lab=la_data_out[1]}
+lab=la_data_in[1]}
 N 4220 -520 4290 -520 {
-lab=la_data_out[0]}
+lab=la_data_in[0]}
 N 4590 -720 4640 -720 {
 lab=io_analog[10:7]}
 N 4140 240 4140 280 {
@@ -254,11 +254,11 @@ C {devices/lab_pin.sym} 4200 380 0 1 {name=l33 sig_type=std_logic lab=vssd2}
 C {devices/lab_pin.sym} 4440 -830 0 1 {name=l34 sig_type=std_logic lab=vccd2}
 C {devices/lab_pin.sym} 4220 -620 0 0 {name=l35 sig_type=std_logic lab=io_in[23]}
 C {devices/lab_pin.sym} 4220 -640 0 0 {name=l38 sig_type=std_logic lab=la_data_out[5]}
-C {devices/lab_pin.sym} 4220 -600 0 0 {name=l36 sig_type=std_logic lab=la_data_out[4]}
-C {devices/lab_pin.sym} 4220 -580 0 0 {name=l37 sig_type=std_logic lab=la_data_out[3]}
-C {devices/lab_pin.sym} 4220 -540 0 0 {name=l39 sig_type=std_logic lab=la_data_out[1]}
-C {devices/lab_pin.sym} 4220 -560 0 0 {name=l40 sig_type=std_logic lab=la_data_out[2]}
-C {devices/lab_pin.sym} 4220 -520 0 0 {name=l41 sig_type=std_logic lab=la_data_out[0]}
+C {devices/lab_pin.sym} 4220 -600 0 0 {name=l36 sig_type=std_logic lab=la_data_in[4]}
+C {devices/lab_pin.sym} 4220 -580 0 0 {name=l37 sig_type=std_logic lab=la_data_in[3]}
+C {devices/lab_pin.sym} 4220 -540 0 0 {name=l39 sig_type=std_logic lab=la_data_in[1]}
+C {devices/lab_pin.sym} 4220 -560 0 0 {name=l40 sig_type=std_logic lab=la_data_in[2]}
+C {devices/lab_pin.sym} 4220 -520 0 0 {name=l41 sig_type=std_logic lab=la_data_in[0]}
 C {devices/lab_pin.sym} 4220 -740 0 0 {name=l42 sig_type=std_logic lab=gpio_analog[12:15]}
 C {devices/lab_pin.sym} 4220 -760 0 0 {name=l43 sig_type=std_logic lab=gpio_analog[11]}
 C {devices/lab_pin.sym} 4220 -720 0 0 {name=l44 sig_type=std_logic lab=gpio_analog[10]}
